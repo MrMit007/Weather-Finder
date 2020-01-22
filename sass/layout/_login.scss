@@ -1,0 +1,16 @@
+.section-logincard {
+  background-color: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  padding: 15rem 15rem;
+}
+
+
+.row{
+    background-color: green($color: #00ff00);
+}
+.card {
+  background-color: red;
+}

@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 1rem;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  backdrop-filter: initial; }
+
+body {
+  box-sizing: border-box; }
+
+::selection {
+  background-color: #210458;
+  color: #ffffff; }
+
+.section-logincard {
+  background-color: linear-gradient(to right bottom, #00ff9d, #2994ee);
+  padding: 15rem 15rem; }
+
+.row {
+  background-color: 255; }
+
+.card {
+  background-color: red; }
