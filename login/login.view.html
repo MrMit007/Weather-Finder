@@ -5,10 +5,10 @@
                 <div class="card-form" align="center">
                     <h2 class="labelh2">Login</h2>
                     <br />
-                    <form name="form" class="form" ng-submit="vm.login()" role="form">
+                    <form name="form" class="formlogin" ng-submit="vm.login()" role="form">
                         <div class="form-group"
                             ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-                            <input type="email" name="username" id="username" class="form__control"
+                            <input type="email" name="username" id="username" class="formlogin__control"
                                 ng-model="vm.username" placeholder="Email" required />
                             <span ng-show="form.username.$dirty && form.username.$error.required"
                                 class="help-block">Username is
@@ -18,7 +18,7 @@
 
                         <div class="form-group"
                             ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-                            <input type="password" name="password" id="password" class="form__control"
+                            <input type="password" name="password" id="password" class="formlogin__control"
                                 ng-model="vm.password" placeholder="Password" required />
                             <span ng-show="form.password.$dirty && form.password.$error.required"
                                 class="help-block">Password is
@@ -42,8 +42,9 @@
                         </div>
                     </form>
                 </div>
-                <h1 class="login-welcome-text">Welcome Back!</h1>
             </div>
+            <h1 class="login-welcome-text">Welcome Back!</h1>
+            <h1 class="login-under-text">________</h1>
         </div>
     </section>
 </main>

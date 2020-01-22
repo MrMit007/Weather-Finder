@@ -1,12 +1,13 @@
-.form {
+.formlogin {
   &__group:not(:last-child) {
     margin-bottom: 2rem;
   }
 
-&__control {
+  &__control {
   border: none;
   transition: all 0.3s;
   box-shadow: 2 2rem 4rem rgba($color-primary, 0.5);
+  animation: 2s ease-in-out slidedown;
 
   &:focus {
     outline: none;

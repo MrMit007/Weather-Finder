@@ -1,4 +1,4 @@
-.logincard {
+.regcard {
   background-image: linear-gradient(
     to right top,
     $color-primary-light,
@@ -7,7 +7,7 @@
   height: 100vh;
 }
 
-.card {
+.cardsignup {
   background-image: linear-gradient(
       90deg,
       rgba($color-white, 1) 0%,
@@ -42,7 +42,7 @@
   font-size: 2rem;
 }
 
-.login-welcome-text {
+.login-signup-text {
   color: #fff;
   letter-spacing: 0.03rem;
   margin: -15rem 0 2rem 60rem;
