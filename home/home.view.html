@@ -1,4 +1,17 @@
-﻿<h1>Hi {{vm.user.firstName}}!</h1>
+﻿<mat-toolbar color="primary" class="toolbar">
+    <a href="#menu"><img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebar-logo"></a>
+    <img src="../img/logo.png" alt="marshmallow-logo" class="main-logo">
+
+    <span class="logo-text">Minimus</span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <span class="day-text">Today</span>
+</mat-toolbar>
+
+
+<h1>Hi {{vm.user.firstName}}!</h1>
 <p>You're logged in!!</p>
 <h3>All registered users:</h3>
 <ul>
@@ -9,3 +22,4 @@
 </ul>
 <p>&nbsp;</p>
 <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
+

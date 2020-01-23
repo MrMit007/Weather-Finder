@@ -111,12 +111,98 @@ body {
         transition: all .3s;
     }
 */
+.toolbar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #ffffff;
+  align-items: center;
+  border-bottom: 1px solid black; }
+  .toolbar .sidebar-logo {
+    height: 3rem; }
+  .toolbar .main-logo {
+    height: 5rem;
+    padding-left: 3rem; }
+  .toolbar .logo-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    font-style: oblique;
+    color: #000000; }
+  .toolbar .day-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000000; }
+
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto; }
+
+/*
+    Slide Menu
+= = = = = = = = =
+*/
+.side-menu__container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 25; }
+
+.side-menu__container-active {
+  pointer-events: auto; }
+
+.side-menu__container::before {
+  content: '';
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #0c1066;
+  opacity: 0;
+  transition: opacity 300ms linear;
+  will-change: opacity; }
+
+.side-menu__container-active::before {
+  opacity: 0.3; }
+
+.slide-menu {
+  box-sizing: border-box;
+  transform: translateX(-103%);
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 90%;
+  max-width: 26rem;
+  background-color: white;
+  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 4fr 1fr;
+  grid-gap: 1rem;
+  transition: transform 300ms linear;
+  will-change: transform; }
+
+.slide-menu-active {
+  transform: none; }
+
 .logincard {
   background-image: linear-gradient(to right top, #31b5cc, #2994ee);
   height: 100vh; }
 
 .card {
-  background-image: linear-gradient(90deg, white 0%, white 35%, rgba(33, 4, 88, 0.3) 35%), url("../img/river.jpg");
+  background-image: linear-gradient(90deg, white 0%, white 35%, rgba(33, 4, 88, 0.3) 35%), url("../img/sun.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -167,7 +253,7 @@ body {
   height: 100vh; }
 
 .cardsignup {
-  background-image: linear-gradient(90deg, white 0%, white 35%, rgba(33, 4, 88, 0.3) 35%), url(../img/river.jpg);
+  background-image: linear-gradient(90deg, white 0%, white 35%, rgba(33, 4, 88, 0.3) 35%), url(../img/sun.jpg);
   background-size: 100%;
   border-radius: 2rem;
   height: 70vh;
