@@ -24,6 +24,7 @@
             UserService.GetByUsername($rootScope.globals.currentUser.username)
                 .then(function (user) {
                     vm.user = user;
+                    console.log(vm.user)
                 });
         }
 
@@ -31,14 +32,15 @@
             UserService.GetAll()
                 .then(function (users) {
                     vm.allUsers = users;
+                    console.log(vm.allUsers);
                 });
         }
 
         function deleteUser(id) {
             UserService.Delete(id)
-            .then(function () {
-                loadAllUsers();
-            });
+                .then(function () {
+                    loadAllUsers();
+                });
         }
     }
 
