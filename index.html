@@ -1,55 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
-    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
-    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
 
-    <script src="app.js"></script>
-    <script src="app-services/authentication.service.js"></script>
-    <script src="app-services/flash.service.js"></script>
+  <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
+  <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
+  <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <!-- Real user service that uses an api -->
-    <!-- <script src="app-services/user.service.js"></script> -->
+  <script src="app.js"></script>
+  <script src="app-services/authentication.service.js"></script>
+  <script src="app-services/flash.service.js"></script>
 
-    <!-- Fake user service for demo that uses local storage -->
-    <script src="app-services/user.service.local-storage.js"></script>
+  <!-- Real user service that uses an api -->
+  <!-- <script src="app-services/user.service.js"></script> -->
 
-    <script src="home/home.controller.js"></script>
-    <script src="login/login.controller.js"></script>
-    <script src="register/register.controller.js"></script>
-    <!--<link rel="stylesheet" href="css/icon-font.css">-->
+  <!-- Fake user service for demo that uses local storage -->
+  <script src="app-services/user.service.local-storage.js"></script>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
-    />
-    <link rel="shortcut icon" type="image/png" href="img/logo.png" />
+  <script src="home/home.controller.js"></script>
+  <script src="login/login.controller.js"></script>
+  <script src="register/register.controller.js"></script>
+  <!--<link rel="stylesheet" href="css/icon-font.css">-->
 
-    <title>Weather App</title>
-  </head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <link rel="shortcut icon" type="image/png" href="img/logo.png" />
 
-  <body>
-    <div
-      ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }"
-      ng-if="flash"
-      ng-bind="flash.message"
-    ></div>
-    <div ng-view></div>
+  <title>Weather App</title>
+</head>
+
+<body>
+  <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }"
+    ng-if="flash" ng-bind="flash.message"></div>
+  <div ng-view></div>
 
 
-    <!--section class="section-book">
+  <!--section class="section-book">
       <div class="row">
         <div class="book">
           <div class="book__form">
@@ -91,5 +84,6 @@
       </div>
     </!--section-->
 
-  </body>
+</body>
+
 </html>

@@ -1,5 +1,5 @@
 ﻿<mat-toolbar color="primary" class="toolbar">
-    <a href="#menu"><img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebar-logo"></a>
+    <a href=""><img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebar-logo" onclick="openNav()"></a>
     <img src="../img/logo.png" alt="marshmallow-logo" class="main-logo">
 
     <span class="logo-text">Minimus</span>
@@ -10,6 +10,20 @@
     <span class="day-text">Today</span>
 </mat-toolbar>
 
+
+<div id="mySidepanel" class="sidepanel">
+    <div class="sidepanel__top">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <span class="welcome">WELCOME BACK</span>
+        <img src="../img/user.png" class="sidepanel__top__img">
+        <a href="#">{{vm.user.username}}</a>
+        <span class="plan"> Free Plan</span>
+    </div>
+    <a href="#">Home</a>
+    <a href="#">Add city</a>
+    <a href="#">Shared With Me</a>
+    <a href="#">Logout</a>
+</div>
 
 <h1>Hi {{vm.user.firstName}}!</h1>
 <p>You're logged in!!</p>
@@ -22,4 +36,3 @@
 </ul>
 <p>&nbsp;</p>
 <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
-

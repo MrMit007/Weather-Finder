@@ -49,7 +49,7 @@
                 GetByUsername(user.username)
                     .then(function (duplicateUser) {
                         if (duplicateUser !== null) {
-                            deferred.resolve({ success: false, message: 'Username "' + user.username + '" is already taken' });
+                            deferred.resolve({ success: false, message: 'Email ID "' + user.username + '" is already taken' });
                         } else {
                             var users = getUsers();
 
@@ -105,11 +105,43 @@
         // private functions
 
         function getUsers() {
-            if(!localStorage.users){
+
+
+            var request = new XMLHttpRequest()
+
+            let url = "http://localhost:3000/users";
+            let dataa = request.open('GET', url, true)
+            let data = JSON.stringify([]);
+
+            request.onload = function () {
+                // Begin accessing JSON data here
+                data = JSON.parse(this.response)
+
+                if (request.status >= 200 && request.status < 400) {
+                    console.log("Data from JSON SERVER: ");
+                    console.log(data);
+                    console.log("Data from local SERVER: ");
+                    console.log(localStorage.data);
+                    console.log("Type of jsondata:");
+                    console.log(typeof (data));
+                    console.log("Type of localstorage:");
+                    console.log(typeof (localStorage));
+                }
+                else {
+                    console.log('error')
+                }
+            }
+
+            request.send();
+
+
+            if (!localStorage.users) {
                 localStorage.users = JSON.stringify([]);
             }
 
+            console.log(localStorage.users)
             return JSON.parse(localStorage.users);
+
         }
 
         function setUsers(users) {
