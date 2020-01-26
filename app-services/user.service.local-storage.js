@@ -107,7 +107,7 @@
         function getUsers() {
 
 
-            var request = new XMLHttpRequest()
+            let request = new XMLHttpRequest()
 
             let url = "http://localhost:3000/users";
             let dataa = request.open('GET', url, true)
@@ -116,16 +116,19 @@
             request.onload = function () {
                 // Begin accessing JSON data here
                 data = JSON.parse(this.response)
+                data = JSON.stringify(data);
 
                 if (request.status >= 200 && request.status < 400) {
                     console.log("Data from JSON SERVER: ");
                     console.log(data);
                     console.log("Data from local SERVER: ");
-                    console.log(localStorage.data);
+                    console.log(localStorage.users);
                     console.log("Type of jsondata:");
                     console.log(typeof (data));
                     console.log("Type of localstorage:");
-                    console.log(typeof (localStorage));
+                    console.log(typeof (localStorage.users));
+
+                    localStorage.users = data;
                 }
                 else {
                     console.log('error')

@@ -20,37 +20,44 @@
         return service;
 
 
+        function GetAll() {
+            return $http.get('http://localhost:3000/users/').then(handleSuccess);
+        }
+
         function GetById(id) {
-            return $http.get('/users/' + id).then(handleSuccess, handleError('Error getting user by id'));
+            return $http.get('http://localhost:3000/users/' + id).then(handleSuccess, handleError('Error getting user by id'));
         }
 
         function GetByUsername(username) {
-            return $http.get('/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
+            return $http.get('http://localhost:3000/users?username=' + username).then(handleSuccess);
         }
 
         function Create(user) {
-            return $http.post('/users/', user).then(handleSuccess, handleError('Error creating user'));
+            return $http.post('http://localhost:3000/users/', user).then(handleSuccess, handleError('Error creating user'));
         }
 
         function Update(user) {
-            return $http.put('/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
+            return $http.put('http://localhost:3000/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {
-            return $http.delete('/users/' + id).then(handleSuccess, handleError('Error deleting user'));
+            return $http.delete('http://localhost:3000/users/' + id).then(handleSuccess, handleError('Error deleting user'));
         }
 
         // private functions
 
         function handleSuccess(res) {
+            console.log(res.data);
             return res.data;
         }
 
-        function handleError(error) {
+        /*function handleError(error) {
+
+            console.log("Error:"+error);
             return function () {
                 return { success: false, message: error };
             };
-        }
+        }*/
     }
 
 })();

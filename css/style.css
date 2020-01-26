@@ -37,9 +37,9 @@ body {
 #password {
   border-radius: 2rem;
   box-shadow: 0 0 2rem rgba(0, 0, 255, 0.3);
-  padding: 20px;
-  width: 200px;
-  height: 15px; }
+  padding: 2rem;
+  width: 18rem;
+  height: 1.5rem; }
 
 #loginbtn {
   padding: 1rem;
@@ -189,7 +189,7 @@ body {
   height: 100vh; }
 
 .card {
-  background-image: linear-gradient(90deg, white 0%, white 35%, rgba(33, 4, 88, 0.3) 35%), url("../img/road.jpg");
+  background-image: linear-gradient(90deg, white 0%, white 35%, rgba(33, 4, 88, 0.3) 35%), url("../img/sun.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -240,7 +240,7 @@ body {
   height: 100vh; }
 
 .cardsignup {
-  background-image: linear-gradient(90deg, white 0%, white 35%, rgba(33, 4, 88, 0.3) 35%), url(../img/road.jpg);
+  background-image: linear-gradient(90deg, white 0%, white 35%, rgba(33, 4, 88, 0.3) 35%), url(../img/sun.jpg);
   background-size: 100%;
   border-radius: 2rem;
   height: 70vh;
