@@ -41,18 +41,13 @@ body {
   width: 18rem;
   height: 1.5rem; }
 
-#loginbtn {
-  padding: 1rem;
-  border-radius: 2rem;
-  outline: 0;
-  border: none;
-  color: #fff;
-  font-size: 1.1rem;
-  cursor: pointer;
-  margin-top: 1.5rem;
-  width: 50%;
-  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
-  background-color: #be2121; }
+.md-raised,
+.md-primary {
+  padding: 1rem 3rem 1rem 3rem;
+  border-radius: 25%; }
+  .md-raised:focus,
+  .md-primary:focus {
+    outline: none; }
 
 /*.form-label {
         font-size: 1.2rem;
@@ -149,43 +144,48 @@ body {
   left: 0;
   background-color: #ffffff;
   overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px; }
+  transition: 0.5s; }
   .sidepanel__top {
-    background-image: linear-gradient(to right top, #31b5cc, #2994ee); }
-    .sidepanel__top__img {
-      height: 5rem; }
-
-.sidepanel a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s; }
-
-.sidepanel a:hover {
-  color: #f1f1f1; }
-
-.sidepanel .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px; }
-
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none; }
-
-.openbtn:hover {
-  background-color: #444; }
+    background-image: linear-gradient(to right, #00ff9b, #5f84fb);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    .sidepanel__top__uper {
+      display: flex;
+      width: 100%;
+      margin-top: 1rem;
+      align-content: stretch;
+      align-items: stretch;
+      justify-content: flex-start; }
+      .sidepanel__top__uper__logo {
+        height: 3rem; }
+      .sidepanel__top__uper__welcome {
+        font-size: 2rem;
+        align-self: center;
+        margin-left: 5rem;
+        color: #ffffff; }
+    .sidepanel__top__lower {
+      display: flex;
+      margin-top: 8rem;
+      margin-bottom: 2rem; }
+      .sidepanel__top__lower__img {
+        height: 7rem; }
+      .sidepanel__top__lower__details {
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem; }
+        .sidepanel__top__lower__details__email {
+          color: #ffffff;
+          font-size: 2rem; }
+        .sidepanel__top__lower__details__plan {
+          color: #ffffff; }
+  .sidepanel__nav {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    color: #000000;
+    margin: 3rem 0 0 2rem; }
 
 .logincard {
-  background-image: linear-gradient(to right top, #31b5cc, #2994ee);
+  background-image: linear-gradient(to right top, #00ff9b, #5f84fb);
   height: 100vh; }
 
 .card {
@@ -236,7 +236,7 @@ body {
   animation: 2s ease-out slideright; }
 
 .regcard {
-  background-image: linear-gradient(to right top, #31b5cc, #2994ee);
+  background-image: linear-gradient(to right top, #00ff9b, #5f84fb);
   height: 100vh; }
 
 .cardsignup {

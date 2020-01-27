@@ -33,7 +33,7 @@
         }
 
         function Create(user) {
-            return $http.post('http://localhost:3000/users/', user).then(handleSuccess, handleError('Error creating user'));
+            return $http.post('http://localhost:3000/users/', user).then(handleSuccess);
         }
 
         function Update(user) {

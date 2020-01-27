@@ -4,25 +4,24 @@
   }
 
   &__control {
-  border: none;
-  transition: all 0.3s;
-  box-shadow: 2 2rem 4rem rgba($color-primary, 0.5);
-  animation: 2s ease-in-out slidedown;
+    border: none;
+    transition: all 0.3s;
+    box-shadow: 2 2rem 4rem rgba($color-primary, 0.5);
+    animation: 2s ease-in-out slidedown;
 
-  &:focus {
-    outline: none;
+    &:focus {
+      outline: none;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+    zoom: 150%;
   }
-
-  &:focus:invalid {
-    border-bottom: 3px solid $color-secondary-dark;
-  }
-
-  &::-webkit-input-placeholder {
-    color: $color-grey-dark-2;
-  }
-  zoom:150%;
-}
-
 }
 
 #username,
@@ -34,18 +33,13 @@
   height: 1.5rem;
 }
 
-#loginbtn{
-  padding: 1rem;
-  border-radius: 2rem;
-  outline: 0;
-  border: none;
-  color: #fff;
-  font-size: 1.1rem;
-  cursor: pointer;
-  margin-top: 1.5rem;
-  width: 50%;
-  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
-  background-color: rgb(190, 33, 33);
+.md-raised,
+.md-primary {
+  padding: 1rem 3rem 1rem 3rem;
+  border-radius: 25%;
+  &:focus {
+    outline: none;
+  }
 }
 /*.form-label {
         font-size: 1.2rem;

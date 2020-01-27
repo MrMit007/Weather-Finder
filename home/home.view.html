@@ -11,23 +11,34 @@
 </mat-toolbar>
 
 
-<div id="mySidepanel" class="sidepanel">
+<md-sidenav id="mySidepanel" class="sidepanel">
     <div class="sidepanel__top">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <span class="welcome">WELCOME BACK</span>
-        <img src="../img/user.png" class="sidepanel__top__img">
-        <a href="#">{{vm.user.username}}</a>
-        <span class="plan"> Free Plan</span>
+        <div class="sidepanel__top__uper">
+            <a href="">
+                <img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidepanel__top__uper__logo"
+                    onclick="closeNav()"></a>
+            <span class="sidepanel__top__uper__welcome">WELCOME BACK</span>
+        </div>
+        <div class="sidepanel__top__lower"><img src="../img/user.png" class="sidepanel__top__lower__img">
+            <div class="sidepanel__top__lower__details">
+                <span class="sidepanel__top__lower__details__email">{{vm.user.username}}</span>
+                <span class="sidepanel__top__lower__details__plan"> Free Plan</span>
+            </div>
+        </div>
     </div>
+
+    <div class="sidepanel__nav">
     <a href="#">Home</a>
     <a href="#">Add city</a>
     <a href="#">Shared With Me</a>
     <a href="#">Logout</a>
-</div>
+    </div>
+</md-sidenav>
 
 <h1>Hi {{vm.user.firstName}}!</h1>
 <p>You're logged in!!</p>
 <h3>All registered users:</h3>
+
 <ul>
     <li ng-repeat="user in vm.allUsers">
         {{user.username}} ({{user.firstName}} {{user.lastName}})
