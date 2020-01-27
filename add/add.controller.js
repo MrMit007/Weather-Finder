@@ -5,28 +5,46 @@
         .module('app')
         .controller('AddController', AddController);
 
-    LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService'];
-    function LoginController($location, AuthenticationService, FlashService) {
+    AddController.$inject = ['UserService', '$rootScope'];
+    function AddController(UserService, $rootScope) {
         var vm = this;
 
-        vm.login = login;
+        vm.user = null;
+        vm.allUsers = [];
+        vm.deleteUser = deleteUser;
 
-        (function initController() {
-            // reset login status
-            AuthenticationService.ClearCredentials();
-        })();
+        initController();
 
-        function login() {
-            vm.dataLoading = true;
-            AuthenticationService.Login(vm.username, vm.password, function (response) {
-                if (response.success) {
-                    AuthenticationService.SetCredentials(vm.username, vm.password);
-                    $location.path('/');
-                } else {
-                    FlashService.Error(response.message);
-                    vm.dataLoading = false;
-                }
-            });
-        };
+        function initController() {
+            loadCurrentUser();
+            loadAllUsers();
+        }
+
+        function loadCurrentUser() {
+            UserService.GetByUsername($rootScope.globals.currentUser.username)
+                .then(function (user) {
+                    vm.user = user[0];
+                    console.log("Current User:");
+                    console.log(vm.user)
+                });
+        }
+
+        function loadAllUsers() {
+            UserService.GetAll()
+                .then(function (users) {
+                    console.log("allusers:")
+                    console.log(users);
+                    vm.allUsers = users;
+                    console.log("All user:");
+                    console.log(vm.allUsers);
+                });
+        }
+
+        function deleteUser(id) {
+            UserService.Delete(id)
+                .then(function () {
+                    loadAllUsers();
+                });
+        }
     }
 })();
