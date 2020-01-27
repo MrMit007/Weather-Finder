@@ -4,51 +4,60 @@
             <div class="cardsignup">
                 <div class="card-form" align="center">
                     <h2 class="labelh2">Register</h2>
-                    <br />
+                    <br/>
                     <form name="form" class="formsignup" ng-submit="vm.register()" role="form">
                         <div class="form-group"
                             ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-                            <input placeholder="First Name" type="text" name="firstName" id="firstName"
-                                class="formsignup__control" ng-model="vm.user.firstName" required />
+                        <md-input-container flex>
+                            <label for="floatingLabelName" class="formtext" align="left">First Name</label>
+                            <input id="floatingLabelName" type="text" ng-model="vm.user.firstName" />
+                        </md-input-container>
                             <span ng-show="form.firstName.$dirty && form.firstName.$error.required"
                                 class="help-block">First name is
                                 required</span>
                         </div>
-                        <br />
+
                         <div class="form-group"
                             ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-                            <input placeholder="Last Name" type="text" name="lastName" id="lastName"
-                                class="formsignup__control" ng-model="vm.user.lastName" required />
+                            <md-input-container flex>
+                                <label for="floatingLabelName" class="formtext" align="left">Last Name</label>
+                                <input id="floatingLabelName" type="text" ng-model="vm.user.lastName" />
+                            </md-input-container>
                             <span ng-show="form.lastName.$dirty && form.lastName.$error.required"
                                 class="help-block">Last name is
                                 required</span>
                         </div>
-                        <br />
+
+                        
+
                         <div class="form-group"
                             ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-                            <input placeholder="Email" type="email" name="username" id="username"
-                                class="formsignup__control" ng-model="vm.user.username" required />
+                            <md-input-container flex>
+                                <label for="floatingLabelName" class="formtext" align="left">Email Id</label>
+                                <input id="floatingLabelName" type="email" ng-model="vm.user.username" />
+                            </md-input-container>
+
                             <span ng-show="form.username.$dirty && form.username.$error.required"
                                 class="help-block">Username is
                                 required</span>
                         </div>
-                        <br />
+                       
                         <div class="form-group"
                             ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-                            <input placeholder="Password" type="password" name="password" id="password"
-                                class="formsignup__control" ng-model="vm.user.password" required />
+                            <md-input-container flex>
+                                <label for="floatingLabelName" class="formtext" align="left">Password</label>
+                                <input id="floatingLabelName" type="password" ng-model="vm.user.password" />
+                            </md-input-container>
                             <span ng-show="form.password.$dirty && form.password.$error.required"
                                 class="help-block">Password is
                                 required</span>
                         </div>
                         <div class="form-actions">
                             <md-button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="md-raised md-primary">Register</md-button>
-
-
                             <img ng-if="vm.dataLoading"
                                 src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                            <br /><br />
-
+                            <br />
+                            <br />
                             <label for="signupbtn">Already have an account?</label>
                             <a href="#!/login" class="btn btn-link">Login</a>
                         </div>

@@ -1,0 +1,211 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0.2rem;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  backdrop-filter: initial;
+}
+body {
+  box-sizing: border-box;
+}
+::selection {
+  background-color: #210458;
+  color: #ffffff;
+}
+.toolbar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #ffffff;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.toolbar .sidebar-logo {
+  height: 3rem;
+  z-index: 10;
+}
+.toolbar .sidebar-logo:focus {
+  outline: none;
+}
+.toolbar .main-logo {
+  height: 5rem;
+  padding-left: 3rem;
+}
+.toolbar .logo-text {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  font-style: oblique;
+  color: #000000;
+}
+.toolbar .day-text {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+}
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+.sidepanel {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.sidepanel__top {
+  background-image: linear-gradient(to right, #00ff9b, #5f84fb);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sidepanel__top__uper {
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+  align-content: stretch;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.sidepanel__top__uper__logo {
+  height: 3rem;
+}
+.sidepanel__top__uper__logo:focus {
+  outline: none;
+}
+.sidepanel__top__uper__welcome {
+  font-size: 2rem;
+  align-self: center;
+  margin-left: 5rem;
+  color: #ffffff;
+}
+.sidepanel__top__lower {
+  display: flex;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+}
+.sidepanel__top__lower__img {
+  height: 7rem;
+}
+.sidepanel__top__lower__details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+.sidepanel__top__lower__details__email {
+  color: #ffffff;
+  font-size: 2rem;
+}
+.sidepanel__top__lower__details__plan {
+  color: #ffffff;
+}
+.sidepanel__nav {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  color: #000000;
+  margin: 3rem 0 0 2rem;
+}
+.sidebar-logo {
+  height: 3rem;
+}
+.mdthemecolorful {
+  background-image: linear-gradient(to right, #00ff9b, #5f84fb);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.logincard {
+  background-image: linear-gradient(to right top, #00ff9b, #5f84fb);
+  height: 100vh;
+}
+.card {
+  background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, rgba(33, 4, 88, 0.3) 35%), url("../img/mountain.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 2rem;
+  height: 70vh;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+.labelh2 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #210458;
+}
+.login-welcome-text {
+  color: #fff;
+  letter-spacing: 0.03rem;
+  margin: -15rem 0 2rem 60rem;
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+  animation: 2s ease-out slideright;
+}
+.login-under-text {
+  color: #fff;
+  letter-spacing: 0.03rem;
+  margin: -5rem 0 2rem 60rem;
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+  animation: 2s ease-out slideright;
+}
+.regcard {
+  background-image: linear-gradient(to right top, #00ff9b, #5f84fb);
+  height: 100vh;
+}
+.cardsignup {
+  background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, rgba(33, 4, 88, 0.3) 35%), url(../img/mountain.jpg);
+  background-size: cover;
+  border-radius: 2rem;
+  height: 70vh;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+.card-form {
+  width: 35%;
+}
+.row {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 7%;
+}
+.labelh2 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #210458;
+}
+.btn {
+  font-size: 2rem;
+}
+.login-signup-text {
+  color: #fff;
+  letter-spacing: 0.03rem;
+  margin: -15rem 0 2rem 60rem;
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+  animation: 2s ease-out slideright;
+}
+.login-under-text {
+  color: #fff;
+  letter-spacing: 0.03rem;
+  margin: -5rem 0 2rem 60rem;
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+  animation: 2s ease-out slideright;
+}

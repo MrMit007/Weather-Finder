@@ -1,0 +1,41 @@
+.toolbar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: @color-white;
+  align-items: center;
+  border-bottom: 1px solid black;
+
+  .sidebar-logo {
+    height: 3rem;
+    z-index: 10;
+  }
+  .sidebar-logo:focus {
+    outline: none;
+  }
+
+  .main-logo {
+    height: 5rem;
+    padding-left: 3rem;
+  }
+
+  .logo-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    font-style: oblique;
+    color: @color-black;
+  }
+  .day-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: @color-black;
+  }
+}
+
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}

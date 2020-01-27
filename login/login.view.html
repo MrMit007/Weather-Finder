@@ -1,33 +1,45 @@
 ﻿<main>
-    <section class="logincard">
+    <section class="logincard" align="center">
         <div class="row">
             <div class="card">
-                <div class="card-form" align="center">
+                <div class="card-form" >
                     <h2 class="labelh2">Login</h2>
                     <br />
+
+
                     <form name="form" class="formlogin" ng-submit="vm.login()" role="form">
+
+                        <br/>   
                         <div class="form-group"
                             ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-                            <input type="email" name="username" id="username" class="formlogin__control"
-                                ng-model="vm.username" placeholder="Email" required />
+                            <md-input-container flex>
+                                <label for="floatingLabelName" class="formtext" align="left">Email Id</label>
+                                <input id="floatingLabelName" id="username" type="email" ng-model="vm.username"
+                                    class="emailbox" />
+                            </md-input-container>
                             <span ng-show="form.username.$dirty && form.username.$error.required"
                                 class="help-block">Username is
                                 required</span>
                         </div>
-                        <br />
+
 
                         <div class="form-group"
                             ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-                            <input type="password" name="password" id="password" class="formlogin__control"
-                                ng-model="vm.password" placeholder="Password" required />
+                            <md-input-container flex >
+                                <label for="floatingLabelName" class="formtext" align="left">Password</label>
+                                <input id="floatingLabelName" type="password" ng-model="vm.password"
+                                    class="passwordbox" />
+                            </md-input-container>
                             <span ng-show="form.password.$dirty && form.password.$error.required"
                                 class="help-block">Password is
                                 required</span>
+
+
                         </div>
-                        <br />
 
                         <div class="form-actions">
-                            <md-button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="md-raised md-primary">
+                            <md-button type="submit" ng-disabled="form.$invalid || vm.dataLoading"
+                                class="md-raised md-primary">
                                 Login
                             </md-button>
                             <img ng-if="vm.dataLoading"

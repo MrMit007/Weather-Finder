@@ -1,7 +1,4 @@
 .formsignup {
-  &__group:not(:last-child) {
-    margin-bottom: 2rem;
-  }
 
   &__control {
     border: none;
@@ -23,37 +20,3 @@
     zoom: 150%;
   }
 }
-
-#firstName,
-#lastName,
-#username,
-#password {
-  border-radius: 2rem;
-  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.3);
-  padding: 20px;
-  width: 200px;
-  height: 15px;
-}
-
-#signupbtn {
-  padding: 1rem;
-  border-radius: 2rem;
-  outline: 0;
-  border: none;
-  color: #fff;
-  font-size: 1.1rem;
-  cursor: pointer;
-  margin-top: 1.5rem;
-  width: 50%;
-  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
-  background-color: rgb(190, 33, 33);
-}
-/*.form-label {
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-left: 2rem;
-        margin-top: .7rem;
-        display: block;
-        transition: all .3s;
-    }
-*/

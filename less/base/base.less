@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0.2rem;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  scroll-behavior: smooth;
+
+  backdrop-filter: initial;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: @colorprimary;
+  color: @color-white;
+}
+

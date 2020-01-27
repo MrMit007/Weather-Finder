@@ -2,7 +2,7 @@
     "use strict";
 
     angular
-        .module("app", ["ngRoute", "ngCookies", "ngMaterial"])
+        .module("app", ["ngRoute", "ngCookies", "ngMaterial", "ngMessages"])
         .config(config)
         .run(run)
 
@@ -28,6 +28,12 @@
                 controllerAs: "vm"
             })
 
+            .when("/add", {
+                controller: "AddController",
+                templateUrl: "add/add.view.html",
+                controllerAs: "vm"
+            })
+
             .otherwise({ redirectTo: "/login" });
     }
 
@@ -50,6 +56,9 @@
             }
         });
     }
+
+
+    
 })();
 
 
