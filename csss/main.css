@@ -33,6 +33,10 @@ body {
   animation: slideup 1s ease-in-out, fadein 1.5s ease-in-out 0ms 1;
   color: #443282;
 }
+.weatherlogo {
+  height: 100px;
+  width: auto;
+}
 .card__title {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -50,6 +54,12 @@ body {
 .add__icon {
   width: 10rem;
   margin-bottom: 1.15rem;
+}
+md-card {
+  height: 40rem;
+  width: 25rem;
+  margin-top: 5rem;
+  box-shadow: 0 2px 1px -1px #000000, 0 1px 1px 0 #000000, 0 1px 3px 0 #000000;
 }
 .toolbar {
   display: flex;
@@ -156,6 +166,31 @@ body {
 .mdthemecolorful {
   background-image: linear-gradient(to right, #00ff9b, #5f84fb);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.backgroundpage {
+  background-color: #5f84fb;
+}
+.searchcard {
+  background-image: linear-gradient(to right top, #00ff9b, #5f84fb);
+  height: 100vh;
+}
+.cardadd {
+  background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(33, 4, 88, 0.3) 50%), url("../img/mountain.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 2rem;
+  height: 80vh;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+.card-form-add {
+  width: 50%;
+}
+.rowadd {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 3%;
 }
 .logincard {
   background-image: linear-gradient(to right top, #00ff9b, #5f84fb);
