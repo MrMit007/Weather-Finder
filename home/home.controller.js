@@ -16,17 +16,19 @@
 
         initController();
 
-        loadCurrentUser();
-        loadAllUsers();
-
-        function loadCurrentUser() {
-            UserService.GetByUsername($rootScope.globals.currentUser.username)
-                .then(function (user) {
-                    vm.user = user[0];
-                    console.log("Current User:");
-                    console.log(vm.user)
-                });
+        function initController() {
+            loadCurrentUser();
+            loadAllUsers();
         }
+
+            function loadCurrentUser() {
+                UserService.GetByUsername($rootScope.globals.currentUser.username)
+                    .then(function (user) {
+                        vm.user = user[0];
+                        console.log("Current User:");
+                        console.log(vm.user)
+                    });
+            }
 
         function loadAllUsers() {
             UserService.GetAll()
@@ -39,6 +41,12 @@
                 });
         }
 
+        function deleteUser(id) {
+            UserService.Delete(id)
+                .then(function () {
+                    loadAllUsers();
+                });
+        }
     }
 
 })();
