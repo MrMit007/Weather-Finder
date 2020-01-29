@@ -6,11 +6,11 @@
         .controller('HomeController', HomeController)
 
 
-    HomeController.$inject = ['UserService', '$rootScope'];
-    function HomeController(UserService, $rootScope) {
+    HomeController.$inject = ['UserService', '$rootScope', '$scope'];
+    function HomeController(UserService, $rootScope, $scope) {
         var vm = this;
-
         vm.user = null;
+        $scope.cities = [];
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
 
@@ -21,14 +21,29 @@
             loadAllUsers();
         }
 
-            function loadCurrentUser() {
-                UserService.GetByUsername($rootScope.globals.currentUser.username)
-                    .then(function (user) {
-                        vm.user = user[0];
-                        console.log("Current User:");
-                        console.log(vm.user)
-                    });
-            }
+        function loadCurrentUser() {
+            UserService.GetByUsername($rootScope.globals.currentUser.username)
+                .then(function (user) {
+                    vm.user = user[0];
+                    console.log("Current User:");
+                    console.log(vm.user)
+                })
+                .then(function () {
+                    console.log(vm.user.city);
+                    // console.log(vm.user.city[]);
+                    $scope.cities = [];
+                    var i = 0;
+                    while (vm.user.city[i]) {
+                        $scope.cities.push(vm.user.city[i]);
+                        $scope.temp = 10;
+                        i++;
+                    }
+                    //$scope.cities = (JSON.stringify(vm.user.city));
+
+                });
+        }
+
+
 
         function loadAllUsers() {
             UserService.GetAll()

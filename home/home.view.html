@@ -1,18 +1,17 @@
 ﻿<div cards class="main__container">
     <app-weather-card>
 
-        <div ng-controller="AppCtrl as appCtrl" ng-cloak="" class="gridListdemoBasicUsage" ng-app="MyApp">
-            <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4" 
-                md-row-height="50rem" md-gutter="50px" md-gutter-gt-sm="20px">
+        <div ng-controller="HomeController as cardloader" ng-cloak="" class="gridListdemoBasicUsage" ng-app="MyApp">
+            <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4" md-row-height="50rem"
+                md-gutter="50px" md-gutter-gt-sm="20px">
 
-                <md-grid-tile ng-repeat="cityname in [1,2,3,4,5,6,7]" class="red" md-rowspan="1" md-colspan="1">
+                <md-grid-tile ng-repeat="cityname in cities track by $index" md-rowspan="1" md-colspan="1">
 
                     <md-card class="cardmd">
                         <md-card-title>
                             <md-card-title-text>
-                                <span class="md-city">{{city}}</span>
+                                <span class="md-city">{{cityname}}</span>
                             </md-card-title-text>
-
                         </md-card-title>
 
                         <img ng-src="{{imagePath}}" class="weatherlogo" alt="weather-logo">
@@ -58,4 +57,4 @@
     </li>
 </ul>
 <p>&nbsp;</p>
-<p><a href="#!/login" class="btn btn-primary">Logout</a></p>    
+<p><a href="#!/login" class="btn btn-primary">Logout</a></p>
