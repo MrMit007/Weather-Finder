@@ -3,8 +3,8 @@
 
     angular
         .module('app')
-        .controller('HomeController', HomeController);
-        
+        .controller('HomeController', HomeController)
+
 
     HomeController.$inject = ['UserService', '$rootScope'];
     function HomeController(UserService, $rootScope) {
@@ -16,10 +16,8 @@
 
         initController();
 
-        function initController() {
-            loadCurrentUser();
-            loadAllUsers();
-        }
+        loadCurrentUser();
+        loadAllUsers();
 
         function loadCurrentUser() {
             UserService.GetByUsername($rootScope.globals.currentUser.username)
@@ -41,12 +39,6 @@
                 });
         }
 
-        function deleteUser(id) {
-            UserService.Delete(id)
-                .then(function () {
-                    loadAllUsers();
-                });
-        }
     }
 
 })();
