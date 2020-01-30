@@ -194,6 +194,7 @@ body {
   width: 25rem;
   align-items: top;
   align-content: center;
+  border-radius: 5%;
   box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);
 }
 .cardcitytext {
@@ -205,6 +206,25 @@ md-card-title {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#vertical-container {
+  height: 100vw;
+  width: 100%;
+}
+.virtualRepeatdemoVerticalUsage .repeated-item {
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  height: 100px;
+  padding-top: 10px;
+}
+.virtualRepeatdemoVerticalUsage md-content {
+  margin: 16px;
+}
+.virtualRepeatdemoVerticalUsage md-virtual-repeat-container {
+  border: solid 1px grey;
+}
+.virtualRepeatdemoVerticalUsage .md-virtual-repeat-container .md-virtual-repeat-offsetter div {
+  padding-left: 16px;
 }
 .main-container__bg {
   height: 100%;

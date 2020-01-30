@@ -1,14 +1,18 @@
 ﻿<div cards class="main__container">
     <app-weather-card>
 
-        <div ng-controller="HomeController as cardloader" ng-cloak="" class="gridListdemoBasicUsage" ng-app="MyApp">
+        <div layout="column" ng-controller="HomeController as cardloader" ng-cloak="" class="gridListdemoBasicUsage"
+            ng-app="MyApp">
 
-            <md-switch class="switchmanager" ng-model="disptype" aria-label="Display Type" ng-change="onChange(disptype)">
+            <md-switch class="switchmanager" ng-model="disptype" aria-label="Display Type"
+                ng-change="onChange(disptype)">
                 Display Type: {{displabel}}
             </md-switch>
 
-            <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4" md-row-height="50rem"
-                md-gutter="50px" md-gutter-gt-sm="20px">
+
+            <!--Grid-->
+            <md-grid-list ng-hide="disptype" md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4"
+                md-row-height="50rem" md-gutter="50px" md-gutter-gt-sm="20px">
 
                 <md-grid-tile ng-repeat='cityname in cities track by $index' md-rowspan="1" md-colspan="1">
 
@@ -60,6 +64,53 @@
                 </md-grid-tile>
 
             </md-grid-list>
+
+
+            <!--List-->
+            <md-virtual-repeat-container ng-show="disptype" id="vertical-container">
+                <md-list>
+                    <md-list-item md-virtual-repeat="cityname in CTS" class="noright">
+                        <img alt="weather-logo" ng-src="../img/{{cityname   .weather[0].main}}.png" class="md-avatar">
+                        <p>{{cityname.name}}</p>
+                        <!--md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat"
+                                md-svg-icon="communication:message"></md-icon-->
+                        <md-card class="cardmd" align="center">
+                            <md-card-title class="citytext">
+                                <md-card-title-text class="cardcitytext">
+                                    <span class="md-city" align="center">{{cityname.name}}</span>
+                                </md-card-title-text>
+                            </md-card-title>
+
+                            <img ng-src="../img/{{cityname.weather[0].main}}.png" class="weatherlogo"
+                                alt="weather-logo">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-temp">{{cityname.main.temp}}</span>
+                                    <span class="md-weather">{{cityname.weather[0].main}}</span>
+                                </md-card-title-text>
+
+                            </md-card-title>
+                            <md-card-content>
+                                <p>
+                                    <span class="md-temp">{{cityname.main.temp_min}}</span>
+                                    <span class="md-weather">Min</span>
+
+                                    <span class="md-temp">{{cityname.main.temp_max}}</span>
+                                    <span class="md-weather">Max</span>
+
+                                    <br />
+
+                                </p>
+                            </md-card-content>
+                        </md-card>
+                    </md-list-item>
+                </md-list>
+            </md-virtual-repeat-container>
+            </md-content>
+            <!--
+            Copyright 2016 Google Inc. All Rights Reserved. 
+            Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at https://material.angularjs.org/license.
+            -->
         </div>
     </app-weather-card>
 
@@ -78,4 +129,4 @@
     </li>
 </ul>
 <p>&nbsp;</p>
-<p><a href="#!/login" class="btn btn-primary">Logout</a></p>
+<p><a href="#!/login" class="btn btn-primary">Logout</a></p
