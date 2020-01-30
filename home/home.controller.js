@@ -6,7 +6,7 @@
         .controller('HomeController', HomeController)
 
 
-    HomeController.$inject = ['UserService', '$rootScope', '$scope'];
+    HomeController.$inject = ['UserService', '$rootScope', '$scope', '$interval'];
     function HomeController(UserService, $rootScope, $scope) {
         var vm = this;
         vm.user = null;
@@ -14,11 +14,26 @@
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
 
+
+        $scope.datatype = "false"
+        $scope.displabel = "Grid";
+
+        $scope.onChange = function (cbState) {
+            $scope.datatype = cbState;
+            if($scope.datatype)
+            {
+                $scope.displabel="List"
+            }
+            else{
+                $scope.displabel="Grid"
+            }
+        };
+
         initController();
+
 
         function initController() {
             loadCurrentUser();
-            loadAllUsers();
         }
 
         function loadCurrentUser() {
@@ -32,14 +47,34 @@
                     console.log(vm.user.city);
                     // console.log(vm.user.city[]);
                     $scope.cities = [];
+
                     var i = 0;
+
+                    let arr = [];
+
                     while (vm.user.city[i]) {
-                        $scope.cities.push(vm.user.city[i]);
-                        $scope.temp = 10;
+                        console.log(vm.user.city[i]);
+
+                        //console.log("http://api.openweathermap.org/data/2.5/weather?q=" + vm.user.city[i] + "&APPID=e4fbbdc28e9c62296fed91870dfc65dc");
+                        let weturl = "http://api.openweathermap.org/data/2.5/weather?q=" + vm.user.city[i] + "&APPID=e4fbbdc28e9c62296fed91870dfc65dc";
+
+                        let wetdata = [];
+
+                        fetch(weturl)
+                            .then((response) => {
+                                return response.json();
+                            })
+                            .then((wetdata) => {
+                                //console.log(wetdata);
+                                // JSON.stringify(wetdata);
+                                console.log(wetdata);
+                                arr.push(wetdata);
+                                console.log(arr);
+                                loadAllUsers();
+                            });
                         i++;
                     }
-                    //$scope.cities = (JSON.stringify(vm.user.city));
-
+                    $scope.cities = arr;
                 });
         }
 

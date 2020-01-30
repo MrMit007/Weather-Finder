@@ -101,7 +101,7 @@
                         $scope.city = wetdata.name;
                         $scope.temp = wetdata.main.temp;
                         $scope.weather = wetdata.weather[0].main;
-                        $scope.imagePath = "../img/" + wetdata.weather[0].main.toLowerCase() + ".png";
+                        $scope.imagePath = "../img/" + wetdata.weather[0].main + ".png";
                         $scope.tempmin = wetdata.main.temp_min;
                         $scope.tempmax = wetdata.main.temp_max;
                     });
