@@ -10,7 +10,7 @@ angular
                 $mdSidenav(componentId).toggle();
             };
         }
-
+        
         /*function loadCurrentUser() {
             let uid;
             UserService.GetByUsername($rootScope.globals.currentUser.username)

@@ -34,6 +34,12 @@
                 controllerAs: "vm"
             })
 
+            .when("/sharedcity", {
+                controller: "SharedcityController",
+                templateUrl: "sharedcity/sharedcity.view.html",
+                controllerAs: "v    m"
+            })
+
             .otherwise({ redirectTo: "/login" });
     }
 

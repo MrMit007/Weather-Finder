@@ -2,7 +2,7 @@
     <app-weather-card>
 
         <div layout="column" ng-controller="HomeController as cardloader" ng-cloak="" class="gridListdemoBasicUsage"
-            ng-app="MyApp">
+            ng-app="app">
 
             <md-switch class="switchmanager" ng-model="disptype" aria-label="Display Type"
                 ng-change="onChange(disptype)">
@@ -74,10 +74,12 @@
             <!--List-->
             <md-virtual-repeat-container ng-show="disptype" id="vertical-container">
                 <md-list>
+                   
                     <md-list-item md-virtual-repeat="cityname in CTS" class="noright">
                         <!--md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat"
                                 md-svg-icon="communication:message"></md-icon-->
                         <md-card class="cardmdlist" align="center">
+                            
                             <md-card-title class="citytextlist">
                                 <md-card-title-text class="cardcitytextlist">
                                     <span class="md-citylist" align="center">{{cityname.name}}</span>
@@ -95,6 +97,7 @@
                             </md-card-title>
                             <md-card-content>
                                 <p class="templist">
+                                    
                                     <span class="md-temp">{{cityname.main.temp_min}}</span>
                                     <span class="md-weather">Min</span>
                                     <br />
@@ -105,6 +108,10 @@
 
                                 </p>
                             </md-card-content>
+                            <md-button class="md-fab md-primary" ng-click="showPrompt($event,cityname)" id="listsharedbtn" aria-label="Use Android">
+                                <md-icon md-svg-src="../img/share.svg"></md-icon>
+                            </md-button>
+
                         </md-card>
                     </md-list-item>
 
@@ -133,16 +140,3 @@
     <app-error [message]="errorMessage"></app-error>
     <app-add-card></app-add-card>
 </div>
-
-<h1>Hi {{vm.user.firstName}}!</h1>
-<p>You're logged in!!</p>
-<h3>All registered users:</h3>
-
-<ul>
-    <li ng-repeat="user in vm.allUsers">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a ng-click="vm.deleteUser(user.id)">Delete</a>
-    </li>
-</ul>
-<p>&nbsp;</p>
-<p><a href="#!/login" class="btn btn-primary">Logout</a></p

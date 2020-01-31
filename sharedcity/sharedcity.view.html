@@ -1,8 +1,8 @@
 <div cards class="main__container">
     <app-weather-card>
 
-        <div layout="column" ng-controller="HomeController as cardloader" ng-cloak="" class="gridListdemoBasicUsage"
-            ng-app="MyApp">
+        <div layout="column" ng-controller="SharedcityController as cardloader" ng-cloak="" class="gridListdemoBasicUsage"
+            ng-app="app">
 
             <md-switch class="switchmanager" ng-model="disptype" aria-label="Display Type"
                 ng-change="onChange(disptype)">
@@ -17,11 +17,7 @@
                 <md-grid-tile ng-repeat='cityname in cities track by $index' md-rowspan="1" md-colspan="1">
 
                     <md-card class="cardmd" align="center">
-                        <md-button class="md-fab md-primary" ng-click="showPrompt($event,cityname)"
-                            aria-label="Use Android">
-                            <md-icon md-svg-src="../img/share.svg"></md-icon>
-                        </md-button>
-
+                      
                         <md-card-title class="citytext">
                             <md-card-title-text class="cardcitytext">
                                 <span class="md-city" align="center">{{cityname.name}}</span>
@@ -50,22 +46,6 @@
                         </md-card-content>
                     </md-card>
 
-                </md-grid-tile>
-
-                <md-grid-tile md-rowspan="1" md-colspan="1">
-
-                    <a href="#!/add">
-                        <md-card class="cardmd" align="center">
-                            <md-card-title class="citytext">
-                                <md-card-title-text class="cardcitytext">
-                                    <span class="md-city" align="center">Add City</span>
-                                </md-card-title-text>
-                            </md-card-title>
-
-                            <img src="../img/add.png" class="addlogo" alt="weather-logo">
-                        </md-card>
-
-                    </a>
                 </md-grid-tile>
 
             </md-grid-list>
@@ -107,19 +87,6 @@
                             </md-card-content>
                         </md-card>
                     </md-list-item>
-
-                    <a href="#!/add">
-                        <md-card class="cardmdlistadd" align="center">
-                            <md-card-title class="citytextlist">
-                                <md-card-title-text class="cardcitytext">
-                                    <span class="md-city" align="center">Add City</span>
-                                </md-card-title-text>
-                            </md-card-title>
-
-                            <img src="../img/add.png" class="addlogolist" alt="weather-logo">
-                        </md-card>
-
-                    </a>
                 </md-list>
             </md-virtual-repeat-container>
             </md-content>
