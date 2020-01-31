@@ -24,7 +24,7 @@
                         </md-card-title>
 
                         <img ng-src="../img/{{cityname.weather[0].main}}.png" class="weatherlogo" alt="weather-logo">
-                        <md-card-title>
+                        <md-card-title class="citytext">
                             <md-card-title-text>
                                 <span class="md-temp">{{cityname.main.temp}}</span>
                                 <span class="md-weather">{{cityname.weather[0].main}}</span>
@@ -70,31 +70,29 @@
             <md-virtual-repeat-container ng-show="disptype" id="vertical-container">
                 <md-list>
                     <md-list-item md-virtual-repeat="cityname in CTS" class="noright">
-                        <img alt="weather-logo" ng-src="../img/{{cityname   .weather[0].main}}.png" class="md-avatar">
-                        <p>{{cityname.name}}</p>
                         <!--md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat"
                                 md-svg-icon="communication:message"></md-icon-->
-                        <md-card class="cardmd" align="center">
-                            <md-card-title class="citytext">
-                                <md-card-title-text class="cardcitytext">
-                                    <span class="md-city" align="center">{{cityname.name}}</span>
+                        <md-card class="cardmdlist" align="center">
+                            <md-card-title class="citytextlist">
+                                <md-card-title-text class="cardcitytextlist">
+                                    <span class="md-citylist" align="center">{{cityname.name}}</span>
                                 </md-card-title-text>
                             </md-card-title>
 
-                            <img ng-src="../img/{{cityname.weather[0].main}}.png" class="weatherlogo"
+                            <img ng-src="../img/{{cityname.weather[0].main}}.png" class="weatherlogolist"
                                 alt="weather-logo">
                             <md-card-title>
                                 <md-card-title-text>
-                                    <span class="md-temp">{{cityname.main.temp}}</span>
-                                    <span class="md-weather">{{cityname.weather[0].main}}</span>
+                                    <span class="md-templist">{{cityname.main.temp}}</span>
+                                    <span class="md-weatherlist">{{cityname.weather[0].main}}</span>
                                 </md-card-title-text>
 
                             </md-card-title>
                             <md-card-content>
-                                <p>
+                                <p class="templist">
                                     <span class="md-temp">{{cityname.main.temp_min}}</span>
                                     <span class="md-weather">Min</span>
-
+                                    <br />
                                     <span class="md-temp">{{cityname.main.temp_max}}</span>
                                     <span class="md-weather">Max</span>
 
@@ -104,6 +102,19 @@
                             </md-card-content>
                         </md-card>
                     </md-list-item>
+                   
+                    <a href="#!/add">
+                        <md-card class="cardmdlistadd" align="center">
+                            <md-card-title class="citytextlist">
+                                <md-card-title-text class="cardcitytext">
+                                    <span class="md-city" align="center">Add City</span>
+                                </md-card-title-text>
+                            </md-card-title>
+
+                            <img src="../img/add.png" class="addlogolist" alt="weather-logo">
+                        </md-card>
+
+                    </a>
                 </md-list>
             </md-virtual-repeat-container>
             </md-content>
