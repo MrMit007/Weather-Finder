@@ -1,12 +1,13 @@
 .sidepanel {
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   height: 250px;
   top: 0;
   left: 0;
+  bottom: 0;
   position: -webkit-sticky;
-    position: sticky;
+  position: relative;
   background-color: @color-white;
   overflow: hidden;
   transition: 0.5s;
@@ -74,6 +75,11 @@
     color: @color-black;
     margin: 3rem 0 0 2rem;
   }
+}
+
+.sidebarfull {
+  position: fixed;
+  overflow: hidden;
 }
 
 .sidebar-logo {
