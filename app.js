@@ -2,7 +2,7 @@
     "use strict";
 
     angular
-        .module("app", ["ngRoute", "ngCookies", "ngMaterial", "ngMessages"])
+        .module("app", ["ngRoute", "ngCookies", "ngMaterial", "ngMessages", "ngMessages"])
         .config(config)
         .run(run)
 

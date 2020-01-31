@@ -6,14 +6,93 @@
         .controller('HomeController', HomeController)
 
 
-    HomeController.$inject = ['UserService', '$rootScope', '$scope', '$interval'];
-    function HomeController(UserService, $rootScope, $scope) {
+    HomeController.$inject = ['UserService', '$rootScope', '$scope', '$mdDialog', '$http'];
+    function HomeController(UserService, $rootScope, $scope, $mdDialog, $http) {
         var vm = this;
         vm.user = null;
         $scope.cities = [];
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
 
+        $scope.showPrompt = function (ev, city) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            var confirm = $mdDialog.prompt()
+                .title('Enter Email ID to share')
+                .textContent('Bowser is a common name.')
+                .placeholder('Email')
+                .ariaLabel('Email')
+                .initialValue('')
+                .targetEvent(ev)
+                .ok('Share')
+                .cancel('Cancel');
+
+            $mdDialog.show(confirm).then(function (result) {
+                console.log(result + " is shared of city:");
+                console.log(city.name);
+                let cityname = city.name;
+                console.log(vm.allUsers[0].username);
+
+                var i = 0;
+
+                console.log(vm.allUsers[2]);
+                var element = 0;
+
+                console.log(vm.allUsers);
+                for (element in vm.allUsers) {
+
+                    if (result === vm.allUsers[element].username.toString()) {
+                        console.log("user found");
+                        console.log("1");
+
+                        if (!vm.allUsers[element].sharedcity) {
+                            console.log("2");
+
+                            let sharedcityarray = [cityname];
+                            console.log("3");
+                            vm.allUsers[element].sharedcity = sharedcityarray;
+
+                            console.log(vm.allUsers[element]);
+                            console.log("4");
+                            return $http.put('http://localhost:3000/users/' + vm.allUsers[element].id.toString(), vm.allUsers[element]).then(handleSuccess);
+                            console.log("5");
+                        }
+                        else {
+                            console.log("5");
+
+                            if ((vm.allUsers[element].sharedcity).includes(cityname)) {
+                                console.log("6");
+
+                                console.log("Element already exist");
+                            }
+                            else {
+                                console.log("7");
+
+                                (vm.allUsers[element].sharedcity).push(cityname);
+                                console.log("8");
+
+                                return $http.put('http://localhost:3000/users/' + vm.allUsers[element].id.toString(), vm.allUsers[element]).then(handleSuccess);
+                            }
+                        }
+
+                    }
+                    else {
+                        console.log("user Not found");
+                    }
+                    element++;
+                }
+
+
+
+            }, function () {
+                console.log("Failed");
+            });
+        };
+
+
+        function handleSuccess(res) {
+            console.log(res.data);
+            return res.data;
+        }
 
         $scope.datatype = "false";
         $scope.displabel = "Grid";
@@ -38,6 +117,8 @@
         function initController() {
             loadCurrentUser();
         }
+
+
 
         function loadCurrentUser() {
             UserService.GetByUsername($rootScope.globals.currentUser.username)
