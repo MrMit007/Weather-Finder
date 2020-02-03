@@ -7,22 +7,72 @@
   height: 100vh;
 }
 
+.card-form {
+  align-items: center;
+  width: 35%;
+  padding-top: 7%;
+  @media screen and (max-width: 1000px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+}
+
 .card {
   background-image: linear-gradient(
       90deg,
       rgba(@color-white, 1) 0%,
       rgba(@color-white, 1) 35%,
-      rgba(@colorprimary, 0.3 ) 35%
+      rgba(@colorprimary, 0.3) 35%
     ),
     url("../img/mountain.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  text-align: center;
 
   border-radius: 2rem;
+  margin-top: 10%;
   height: 70vh;
   box-shadow: 0 1.5rem 4rem rgba(@color-black, 0.2);
+
+  @media screen and (max-width: 1000px) {
+    background-image: linear-gradient(
+        90deg,
+        rgba(@color-white, 1) 0%,
+        rgba(@color-white, 1) 50%,
+        rgba(@colorprimary, 0.3) 50%
+      ),
+      url("../img/mountain.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    border-radius: 2rem;
+    height: 70vh;
+    box-shadow: 0 1.5rem 4rem rgba(@color-black, 0.2);
+  }
+
+  @media screen and (max-width: 700px) {
+    background-image: linear-gradient(
+        90deg,
+        rgba(@color-white, 1) 0%,
+        rgba(@color-white, 1) 100%,
+        rgba(@colorprimary, 0.3) 100%
+      ),
+      url("../img/mountain.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 2rem;
+    height: 70vh;
+    box-shadow: 0 1.5rem 4rem rgba(@color-black, 0.2);
+  }
 }
 
 .labelh2 {
@@ -33,22 +83,19 @@
 
 .login-welcome-text {
   color: #fff;
-  letter-spacing: 0.03rem;
-  margin: -15rem 0 2rem 60rem;
-  font-size: 5rem;
-  font-weight: bold;
-  position: relative;
   z-index: 5;
-  animation: 2s ease-out slideright;
-}
+  font-size: 400%;
+  margin-left: 40%;
+  border-bottom: 1rem solid;
+  display: table;
 
-.login-under-text {
-  color: #fff;
-  letter-spacing: 0.03rem;
-  margin: -5rem 0 2rem 60rem;
-  font-size: 5rem;
-  font-weight: bold;
-  position: relative;
-  z-index: 5;
-  animation: 2s ease-out slideright;
+  @media screen and (max-width: 1000px) {
+    font-size: 250%;
+    margin-left: 55%;
+    border-bottom: 0.7rem solid;
+  }
+
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
 }

@@ -17,7 +17,7 @@
                 <md-grid-tile ng-repeat='cityname in cities track by $index' md-rowspan="1" md-colspan="1">
 
                     <md-card class="cardmd" align="center">
-                        <md-button class="md-fab md-primary" ng-click="showPrompt($event,cityname)"
+                        <md-button class="md-fab md-primary sharegridbtn" ng-click="showPrompt($event,cityname)"
                             aria-label="Use Android">
                             <md-icon md-svg-src="../img/share.svg"></md-icon>
                         </md-button>
@@ -38,10 +38,12 @@
                         </md-card-title>
                         <md-card-content>
                             <p>
-                                <span class="md-temp">{{cityname.main.temp_min}}</span>
+                                <span class="md-temp" style="color:green;">{{cityname.main.temp_min}}</span>
+
+                                <span class="md-temp" style="color:red;">{{cityname.main.temp_max}}</span>
+                                <br/>
                                 <span class="md-weather">Min</span>
 
-                                <span class="md-temp">{{cityname.main.temp_max}}</span>
                                 <span class="md-weather">Max</span>
 
                                 <br />
@@ -74,12 +76,12 @@
             <!--List-->
             <md-virtual-repeat-container ng-show="disptype" id="vertical-container">
                 <md-list>
-                   
+
                     <md-list-item md-virtual-repeat="cityname in CTS" class="noright">
                         <!--md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat"
                                 md-svg-icon="communication:message"></md-icon-->
                         <md-card class="cardmdlist" align="center">
-                            
+
                             <md-card-title class="citytextlist">
                                 <md-card-title-text class="cardcitytextlist">
                                     <span class="md-citylist" align="center">{{cityname.name}}</span>
@@ -97,7 +99,7 @@
                             </md-card-title>
                             <md-card-content>
                                 <p class="templist">
-                                    
+
                                     <span class="md-temp">{{cityname.main.temp_min}}</span>
                                     <span class="md-weather">Min</span>
                                     <br />
@@ -108,7 +110,8 @@
 
                                 </p>
                             </md-card-content>
-                            <md-button class="md-fab md-primary" ng-click="showPrompt($event,cityname)" id="listsharedbtn" aria-label="Use Android">
+                            <md-button class="md-fab md-primary" ng-click="showPrompt($event,cityname)"
+                                id="listsharedbtn" aria-label="Use Android">
                                 <md-icon md-svg-src="../img/share.svg"></md-icon>
                             </md-button>
 

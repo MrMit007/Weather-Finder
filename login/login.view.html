@@ -2,14 +2,14 @@
     <section class="logincard" align="center">
         <div class="row">
             <div class="card">
-                <div class="card-form" >
+                <div class="card-form" align="center">
                     <h2 class="labelh2">Login</h2>
                     <br />
 
 
-                    <form name="form" class="formlogin" ng-submit="vm.login()" role="form">
+                    <form name="form" class="formlogin" ng-submit="vm.login()" role="form" align="center">
 
-                        <br/>   
+                        <br />
                         <div class="form-group"
                             ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
                             <md-input-container flex>
@@ -25,7 +25,7 @@
 
                         <div class="form-group"
                             ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-                            <md-input-container flex >
+                            <md-input-container flex>
                                 <label for="floatingLabelName" class="formtext" align="left">Password</label>
                                 <input id="floatingLabelName" type="password" ng-model="vm.password"
                                     class="passwordbox" />
@@ -51,11 +51,14 @@
                             <label for="signupbtn">Don't have an account?</label>
                             <a href="#!/register" class="btn btn-link">Register</a>
                         </div>
+
                     </form>
+
                 </div>
+                <h1 class="login-welcome-text">Welcome Back!</h1>
+
             </div>
-            <h1 class="login-welcome-text">Welcome Back!</h1>
-            <h1 class="login-under-text">________</h1>
+
         </div>
     </section>
 </main>

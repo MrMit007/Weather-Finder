@@ -2,7 +2,7 @@
 *::after,
 *::before {
   margin: 0;
-  padding: 0.2rem;
+  padding: 0;
   box-sizing: inherit;
 }
 html {
@@ -58,45 +58,19 @@ body {
 .matcardsearch {
   height: 40rem;
   width: 25rem;
-  margin-top: 5rem;
-  box-shadow: 0 2px 1px -1px #000000, 0 1px 1px 0 #000000, 0 1px 3px 0 #000000;
-}
-.toolbar {
-  display: flex;
+  align-items: top;
   align-content: center;
-  justify-content: center;
-  background-color: #ffffff;
-  align-items: center;
-  border-bottom: 1px solid black;
+  border-radius: 5%;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);
 }
-.toolbar .sidebar-logo {
-  height: 3rem;
-  z-index: 10;
-}
-.toolbar .sidebar-logo:focus {
-  outline: none;
-}
-.toolbar .main-logo {
+.main-logo {
   height: 5rem;
   padding-left: 3rem;
 }
-.toolbar .logo-text {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  font-style: oblique;
-  color: #000000;
-}
-.toolbar .day-text {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  color: #000000;
-}
-.example-fill-remaining-space {
-  /* This fills the remaining space, by using flexbox. 
-     Every toolbar row uses a flexbox row layout. */
-  flex: 1 1 auto;
+.sidebar-logo:focus,
+.sidebar-logo:active {
+  outline: none !important;
+  box-shadow: none;
 }
 .sidepanel {
   width: 0;
@@ -194,8 +168,19 @@ body {
   align-content: center;
   justify-content: center;
 }
+.sharegridbtn {
+  margin-left: 100px;
+}
+.md-temp {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.md-weather {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .cardmd {
-  height: 40rem;
+  height: 42rem;
   width: 25rem;
   align-items: top;
   align-content: center;
@@ -281,7 +266,7 @@ md-card-content {
   padding-right: 30rem;
   padding-left: 5rem;
   display: flex;
-  margin: 0 3rem 0 ;
+  margin: 0 3rem 0;
   align-self: center;
   align-content: stretch;
   flex-wrap: nowrap;
@@ -327,15 +312,56 @@ md-card-content {
   background-image: linear-gradient(to right top, #00ff9b, #5f84fb);
   height: 100vh;
 }
+.card-form {
+  align-items: center;
+  width: 35%;
+  padding-top: 7%;
+}
+@media screen and (max-width: 1000px) {
+  .card-form {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .card-form {
+    width: 100%;
+  }
+}
 .card {
   background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, rgba(33, 4, 88, 0.3) 35%), url("../img/mountain.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  text-align: center;
   border-radius: 2rem;
+  margin-top: 10%;
   height: 70vh;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 1000px) {
+  .card {
+    background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(33, 4, 88, 0.3) 50%), url("../img/mountain.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 2rem;
+    height: 70vh;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  }
+}
+@media screen and (max-width: 700px) {
+  .card {
+    background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 100%, rgba(33, 4, 88, 0.3) 100%), url("../img/mountain.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 2rem;
+    height: 70vh;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  }
 }
 .labelh2 {
   font-size: 4rem;
@@ -344,23 +370,23 @@ md-card-content {
 }
 .login-welcome-text {
   color: #fff;
-  letter-spacing: 0.03rem;
-  margin: -15rem 0 2rem 60rem;
-  font-size: 5rem;
-  font-weight: bold;
-  position: relative;
   z-index: 5;
-  animation: 2s ease-out slideright;
+  font-size: 400%;
+  margin-left: 40%;
+  border-bottom: 1rem solid;
+  display: table;
 }
-.login-under-text {
-  color: #fff;
-  letter-spacing: 0.03rem;
-  margin: -5rem 0 2rem 60rem;
-  font-size: 5rem;
-  font-weight: bold;
-  position: relative;
-  z-index: 5;
-  animation: 2s ease-out slideright;
+@media screen and (max-width: 1000px) {
+  .login-welcome-text {
+    font-size: 250%;
+    margin-left: 55%;
+    border-bottom: 0.7rem solid;
+  }
+}
+@media screen and (max-width: 700px) {
+  .login-welcome-text {
+    display: none;
+  }
 }
 .regcard {
   background-image: linear-gradient(to right top, #00ff9b, #5f84fb);
@@ -368,18 +394,47 @@ md-card-content {
 }
 .cardsignup {
   background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, rgba(33, 4, 88, 0.3) 35%), url(../img/mountain.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  text-align: center;
   border-radius: 2rem;
+  margin-top: 10%;
   height: 70vh;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
 }
-.card-form {
-  width: 35%;
+@media screen and (max-width: 1000px) {
+  .cardsignup {
+    background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(33, 4, 88, 0.3) 50%), url("../img/mountain.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 2rem;
+    height: 70vh;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  }
+}
+@media screen and (max-width: 700px) {
+  .cardsignup {
+    background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 100%, rgba(33, 4, 88, 0.3) 100%), url("../img/mountain.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 2rem;
+    height: 70vh;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  }
 }
 .row {
   padding-left: 10%;
   padding-right: 10%;
-  margin-top: 7%;
+}
+.form-group {
+  height: 6rem;
+  width: auto;
 }
 .labelh2 {
   font-size: 4rem;
@@ -391,21 +446,22 @@ md-card-content {
 }
 .login-signup-text {
   color: #fff;
-  letter-spacing: 0.03rem;
-  margin: -15rem 0 2rem 60rem;
-  font-size: 5rem;
-  font-weight: bold;
-  position: relative;
   z-index: 5;
-  animation: 2s ease-out slideright;
+  font-size: 400%;
+  margin-left: 40%;
+  margin-top: -100px;
+  border-bottom: 1rem solid;
+  display: table;
 }
-.login-under-text {
-  color: #fff;
-  letter-spacing: 0.03rem;
-  margin: -5rem 0 2rem 60rem;
-  font-size: 5rem;
-  font-weight: bold;
-  position: relative;
-  z-index: 5;
-  animation: 2s ease-out slideright;
+@media screen and (max-width: 1000px) {
+  .login-signup-text {
+    font-size: 250%;
+    margin-left: 55%;
+    border-bottom: 0.7rem solid;
+  }
+}
+@media screen and (max-width: 700px) {
+  .login-signup-text {
+    display: none;
+  }
 }

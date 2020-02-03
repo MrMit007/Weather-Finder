@@ -60,19 +60,23 @@
 
   <div ng-controller="AppCtrl" layout="column" style="height: 500px;" ng-cloak>
 
-    <mat-toolbar color="primary" class="toolbar">
-      <a href=""><img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebar-logo" ng-click="toggleLeft()"></a>
-      <img src="../img/logo.png" alt="marshmallow-logo" class="main-logo">
 
-      <span class="logo-text">Minimus</span>
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <a href=""><img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebar-logo"
+              ng-click="toggleLeft()"></a>
 
-      <!-- This fills the remaining space of the current row -->
-      <span class="example-fill-remaining-space"></span>
-
-      <span class="day-text">Today</span>
-    </mat-toolbar>
+        </md-button>
+        <img src="../img/logo.png" alt="marshmallow-logo" class="main-logo">
 
 
+        <h2 flex md-truncate>Minimus</h2>
+
+        <span class="day-text">Today</span>
+
+      </div>
+    </md-toolbar>
 
 
 
@@ -83,13 +87,13 @@
 
         <md-toolbar class="mdthemecolorful">
           <div class="sidepanel__top__uper">
-            <a href=""><img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidepanel__top__uper__logo"
-                ng-click="toggleLeft()"></a>
+            <img ng-src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidepanel__top__uper__logo"
+              ng-click="toggleLeft()">
             <span class="sidepanel__top__uper__welcome">WELCOME BACK</span>
           </div>
-          <div class="sidepanel__top__lower"><img src="../img/user.png" class="sidepanel__top__lower__img">
+          <div class="sidepanel__top__lower"><img ng-src="../img/user.png" class="sidepanel__top__lower__img">
             <div class="sidepanel__top__lower__details">
-              <span class="sidepanel__top__lower__details__email">{{uid}}</span>
+              <span class="sidepanel__top__lower__details__email">{{uidd}}</span>
               <span class="sidepanel__top__lower__details__plan"> Free Plan</span>
             </div>
           </div>
