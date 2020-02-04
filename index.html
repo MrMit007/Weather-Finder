@@ -23,6 +23,8 @@
   <!-- Angular Material Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
+  <!--Material Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script src="app.js"></script>
   <script src="app-services/authentication.service.js"></script>
@@ -67,7 +69,7 @@
         <img src="../img/logo.png" alt="marshmallow-logo" class="main-logo">
 
 
-        <h2 flex md-truncate>Minimus</h2>
+        <h2 flex md-truncate style="font-weight: bold;">Minimus</h2>
 
         <span class="day-text">Today</span>
 
@@ -82,9 +84,8 @@
       <md-sidenav class="md-sidenav-left sidebarfull" md-component-id="left" md-disable-backdrop="" md-whiteframe="6">
 
         <md-toolbar class="mdthemecolorful">
-          <div class="sidepanel__top__uper">
-            <img ng-src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidepanel__top__uper__logo"
-              ng-click="toggleLeft()">
+          <div class="sidepanel__top__uper ">
+            <img ng-src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebar-logo" ng-click="toggleLeft()">
             <span class="sidepanel__top__uper__welcome">WELCOME BACK</span>
           </div>
           <div class="sidepanel__top__lower"><img ng-src="../img/user.png" class="sidepanel__top__lower__img">
@@ -95,36 +96,23 @@
           </div>
         </md-toolbar>
 
-        <md-list>
-          <a href="#!/" class="navi" ng-click="toggleLeft()">
-            <div ui-sref="contact">
-              <md-list-item md-ink-ripple>
-                Home
-              </md-list-item>
-            </div>
-          </a>
-          <a href="#!/add" ng-click="toggleLeft()">
-            <div ui-sref=" contact">
-              <md-list-item md-ink-ripple>
-                Add City
-              </md-list-item>
-            </div>
-          </a>
-          <a href="#!/sharedcity" ng-click="toggleLeft()">
-            <div ui-sref="contact">
-              <md-list-item md-ink-ripple>
-                Shared With Me
-              </md-list-item>
-            </div>
-          </a>
-          <a href="#!/login">
-            <div ui-sref="contact" ng-click="toggleLeft()">
-              <md-list-item md-ink-ripple>
-                Logout
-              </md-list-item>
-            </div>
-          </a>
-        </md-list>
+        <nav class="nav-mobile">
+          <ul class="nav-mobile-list" ng-click="toggleLeft()">
+            <li class="divider"></li>
+            <li><a href="#!/"><i class="material-icons">home</i> Home</a></li>
+            <li class="divider"></li>
+
+            <li><a href="#!/add"><i class="material-icons">search</i> Search City</a></li>
+            <li class="divider"></li>
+            <li><a href="#!/sharedcity"><i class="material-icons">share</i> Shareed With You</a></li>
+            <li class="divider"></li>
+
+            <li><a href="#!/login"><i class="material-icons">logout</i> Logout</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="material-icons">settings</i> Settings</a></li-->
+          </ul>
+        </nav>
+
 
 
       </md-sidenav>
