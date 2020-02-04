@@ -16,7 +16,35 @@
         self.simulateQuery = false;
         self.isDisabled = false;
 
+        $scope.added = false;
+
+        $scope.already = false;
         var auto = $interval(function () { }, 100);
+
+        let weturl = "http://api.openweathermap.org/data/2.5/weather?q=vadodara&APPID=e4fbbdc28e9c62296fed91870dfc65dc";
+
+        let wetdata = [];
+
+        fetch(weturl)
+            .then((response) => {
+                return response.json();
+            })
+            .then((wetdata) => {
+                console.log(wetdata.main.temp);
+                console.log(wetdata.main.temp_min);
+                console.log(wetdata.main.temp_max);
+                console.log(wetdata.weather[0].main);
+                console.log(wetdata.name);
+
+                $scope.vadtemp = wetdata.main.temp;
+                $scope.vadweather = wetdata.weather[0].main;
+                $scope.vadimagePath = "../img/" + wetdata.weather[0].main + ".png";
+                $scope.vadtempmin = wetdata.main.temp_min;
+                $scope.vadtempmax = wetdata.main.temp_max;
+            });
+
+        console.log("vadover");
+
 
         var userid;
         function loadCurrentUser() {
@@ -33,14 +61,20 @@
             if (!self.user.city) {
                 let cityarray = [$scope.city];
                 self.user.city = cityarray;
+                $scope.added = true;
                 return $http.put('http://localhost:3000/users/' + userid, self.user).then(handleSuccess);
+
             }
             else {
                 if ((self.user.city).includes($scope.city)) {
                     console.log("Element already exist");
+                    $scope.already = true;
+
                 }
                 else {
                     (self.user.city).push($scope.city);
+                    $scope.added = true;
+
                     return $http.put('http://localhost:3000/users/' + userid, self.user).then(handleSuccess);
                 }
             }
@@ -107,6 +141,10 @@
                     });
 
                 console.log("over");
+
+                $scope.added = false;
+
+                $scope.already = false;
             }
 
         }

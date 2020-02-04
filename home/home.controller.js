@@ -13,7 +13,7 @@
         $scope.cities = [];
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
-
+        $scope.sharedsuccess = false;
         $scope.showPrompt = function (ev, city) {
             // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.prompt()
@@ -53,6 +53,7 @@
 
                             console.log(vm.allUsers[element]);
                             console.log("4");
+                            $scope.sharedsuccess = true;
                             return $http.put('http://localhost:3000/users/' + vm.allUsers[element].id.toString(), vm.allUsers[element]).then(handleSuccess);
                             console.log("5");
                         }
@@ -61,6 +62,7 @@
 
                             if ((vm.allUsers[element].sharedcity).includes(cityname)) {
                                 console.log("6");
+                                $scope.sharedsuccess = true;
 
                                 console.log("Element already exist");
                             }
@@ -69,6 +71,7 @@
 
                                 (vm.allUsers[element].sharedcity).push(cityname);
                                 console.log("8");
+                                $scope.sharedsuccess = true;
 
                                 return $http.put('http://localhost:3000/users/' + vm.allUsers[element].id.toString(), vm.allUsers[element]).then(handleSuccess);
                             }

@@ -5,14 +5,16 @@
         .module('app')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
-    function RegisterController(UserService, $location, $rootScope, FlashService, $mdToast, $document) {
+    RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService', '$scope'];
+    function RegisterController(UserService, $location, $rootScope, FlashService, $scope) {
         var vm = this;
 
         vm.register = register;
 
+        vm.passPolicyTooltip = "Min Lenght 6 characters";
 
 
+        $scope.useralreadyexistscheck = false;
 
         function register() {
             vm.dataLoading = true;
@@ -26,10 +28,9 @@
                     console.log(user);
                     console.log("Hi");
 
-                    alert("User already exists!");
-                
+                    $scope.useralreadyexistscheck = true;
+                    vm.dataLoading = false;
 
-                    $location.path('/login');
                 }
                 else {
                     UserService.Create(vm.user)

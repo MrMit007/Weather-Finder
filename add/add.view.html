@@ -1,8 +1,41 @@
 <main>
     <section class="searchcard">
         <div class="rowadd">
+            <div class="showcurcity">
+                <md-card class="curcitycard" align="center">
+
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-city vadcity">Vadodara</span>
+                        </md-card-title-text>
+
+                    </md-card-title>
+
+                    <img ng-src="{{vadimagePath}}" class="weatherlogo" alt="weather-logo">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-temp vadtemp">{{vadtemp}}</span>
+                            <span class="md-weather vadwet">{{vadweather}}</span>
+                        </md-card-title-text>
+
+                    </md-card-title>
+                    <md-card-content>
+                        <p>
+                            <span class="md-temp vad" style="color:green;">{{vadtempmin}}</span>
+
+                            <span class="md-temp vad" style="color:red;">{{vadtempmax}}</span>
+                            <br />
+                            <span class="md-weather vad" style="color:green;">Min</span>
+
+                            <span class="md-weather vad" style="color:red;">Max</span>
+
+                        </p>
+                    </md-card-content>
+                </md-card>
+            </div>  
             <div class="cardadd">
                 <div class="card-form-add" align="center">
+
                     <h2 class="labelh2">Search Cities</h2>
                     <br />
 
@@ -35,10 +68,11 @@
                         <div carddisp ng-show="cardvisibility"></div>
 
                     </div>
-
-
                 </div>
+
+
             </div>
+
         </div>
     </section>
 </main>

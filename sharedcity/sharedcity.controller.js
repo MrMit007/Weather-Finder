@@ -14,7 +14,7 @@
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
 
-    
+
 
         $scope.datatype = "false";
         $scope.displabel = "Grid";
@@ -50,9 +50,14 @@
                     console.log(vm.user)
                 })
                 .then(function () {
-                    console.log(vm.user.sharedcity);
-                    // console.log(vm.user.city[]);
-                    loadInGrid();
+                    if (vm.user.sharedcity) {
+                        console.log(vm.user.sharedcity);
+                        // console.log(vm.user.city[]);
+                        loadInGrid();
+                    }
+                    else {
+                        alert("No city shared");
+                    }
                 });
         }
 

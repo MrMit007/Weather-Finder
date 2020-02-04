@@ -66,9 +66,14 @@ body {
 .main-logo {
   height: 5rem;
   padding-left: 3rem;
+  margin: 1rem;
 }
-.sidebar-logo:focus,
-.sidebar-logo:active {
+.sidebarlogo {
+  height: 3rem;
+  filter: invert(100%);
+}
+.sidebarlogo:focus,
+.sidebarlogo:active {
   outline: none !important;
   box-shadow: none;
 }
@@ -148,6 +153,18 @@ body {
   background-image: linear-gradient(to right, #00ff9b, #5f84fb);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+md-list-item {
+  size: 24px;
+}
+md-list-item:hover {
+  font-weight: bold;
+}
+.navi {
+  text-decoration: none;
+}
+.navi:hover .navi:link .navi:active {
+  text-decoration: none;
+}
 .weatherlogo {
   height: 150px;
   width: 150px;
@@ -219,13 +236,14 @@ body {
   height: 20rem;
   width: 25rem;
   align-items: top;
+  margin-left: 3rem;
+  margin-right: 3rem;
   align-content: center;
   display: flex;
   flex-grow: 1;
   flex-direction: row;
-  margin-top: 2rem;
-  border-radius: 5%;
-  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);
+  margin-top: 4rem;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 14px 20px 3px rgba(0, 0, 0, 0.14), 0px 8px 25px 7px rgba(0, 0, 0, 0.12);
 }
 .weatherlogolist {
   height: 100px;
@@ -255,7 +273,7 @@ md-card-content {
 .templist {
   align-items: center;
   justify-content: center;
-  padding: 8rem;
+  padding-top: 8rem;
 }
 .addlogolist {
   height: 150px;
@@ -265,15 +283,19 @@ md-card-content {
 .cardmdlistadd {
   padding-right: 30rem;
   padding-left: 5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 4rem;
   display: flex;
-  margin: 0 3rem 0;
   align-self: center;
   align-content: stretch;
   flex-wrap: nowrap;
   flex-grow: 1;
   flex-direction: row;
-  border-radius: 5%;
-  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);
+  height: 20rem;
+  align-items: top;
+  align-content: center;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 14px 20px 3px rgba(0, 0, 0, 0.14), 0px 8px 25px 7px rgba(0, 0, 0, 0.12);
 }
 .main-container__bg {
   height: 100%;
@@ -291,7 +313,7 @@ md-card-content {
   height: 100vh;
 }
 .cardadd {
-  background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(33, 4, 88, 0.3) 50%), url("../img/mountain.jpg");
+  background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(33, 4, 88, 0.5) 50%), url("../img/mountain.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -300,13 +322,80 @@ md-card-content {
   height: 80vh;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
 }
+@media screen and (max-width: 700px) {
+  .cardadd {
+    background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 100%, rgba(33, 4, 88, 0.3) 0%), url("../img/mountain.jpg");
+  }
+}
 .card-form-add {
+  align-items: center;
   width: 50%;
+  padding-top: 5%;
+}
+@media screen and (max-width: 700px) {
+  .card-form-add {
+    width: 100%;
+  }
 }
 .rowadd {
   padding-left: 5%;
   padding-right: 5%;
-  margin-top: 3%;
+  padding-top: 5%;
+}
+.curcitycard {
+  margin-left: 45%;
+  margin-right: 1px;
+  margin-right: 0;
+  width: 45%;
+  margin-bottom: 0;
+  position: absolute;
+  background: transparent;
+  border: none;
+}
+@media screen and (max-width: 700px) {
+  .curcitycard {
+    display: none;
+  }
+}
+.vadcity {
+  font-size: 8rem;
+  color: white;
+  font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+  .vadcity {
+    font-size: 6rem;
+  }
+}
+.vadtemp {
+  font-size: 5rem;
+  color: white;
+  font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+  .vadtemp {
+    font-size: 4rem;
+  }
+}
+.vadwet {
+  font-size: 5rem;
+  color: white;
+  font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+  .vadwet {
+    font-size: 4rem;
+  }
+}
+.vad {
+  font-size: 4rem;
+  font-weight: bold;
+  align-self: center;
+}
+@media screen and (max-width: 1000px) {
+  .vad {
+    font-size: 3rem;
+  }
 }
 .logincard {
   background-image: linear-gradient(to right top, #00ff9b, #5f84fb);

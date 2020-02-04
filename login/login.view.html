@@ -15,7 +15,11 @@
                             <md-input-container flex>
                                 <label for="floatingLabelName" class="formtext" align="left">Email Id</label>
                                 <input id="floatingLabelName" id="username" type="email" ng-model="vm.username"
-                                    class="emailbox" />
+                                    required="" class="emailbox">
+                                <div ng-messages="vm.username.$error">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
+
                             </md-input-container>
                             <span ng-show="form.username.$dirty && form.username.$error.required"
                                 class="help-block">Username is
@@ -27,8 +31,11 @@
                             ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
                             <md-input-container flex>
                                 <label for="floatingLabelName" class="formtext" align="left">Password</label>
-                                <input id="floatingLabelName" type="password" ng-model="vm.password"
-                                    class="passwordbox" />
+                                <input id="floatingLabelName" type="password" ng-model="vm.password" class="passwordbox"
+                                    required="">
+                                <div ng-messages="vm.password.$error">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
                             </md-input-container>
                             <span ng-show="form.password.$dirty && form.password.$error.required"
                                 class="help-block">Password is
@@ -37,6 +44,8 @@
 
                         </div>
 
+                        <span class="Invalid" ng-show="validcheck" style="color: red; font-weight: bold ;">Invalid Email
+                            or password</span>
                         <div class="form-actions">
                             <md-button type="submit" ng-disabled="form.$invalid || vm.dataLoading"
                                 class="md-raised md-primary">

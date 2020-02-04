@@ -63,11 +63,7 @@
 
     <md-toolbar class="md-hue-2">
       <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
-          <a href=""><img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebar-logo"
-              ng-click="toggleLeft()"></a>
-
-        </md-button>
+        <img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebarlogo" ng-click="toggleLeft()">
         <img src="../img/logo.png" alt="marshmallow-logo" class="main-logo">
 
 
@@ -99,15 +95,36 @@
           </div>
         </md-toolbar>
 
-        <md-content layout-margin="" ng-click="toggleLeft()">
-          <div class="sidepanel__nav">
-            <a href="#!/">Home</a>
-            <a href="#!/add">Add city</a>
-            <a href="#!/sharedcity">Shared With Me</a>
-            <a href="#!/login">Logout</a>
-          </div>
-        </md-content>
-
+        <md-list>
+          <a href="#!/" class="navi" ng-click="toggleLeft()">
+            <div ui-sref="contact">
+              <md-list-item md-ink-ripple>
+                Home
+              </md-list-item>
+            </div>
+          </a>
+          <a href="#!/add" ng-click="toggleLeft()">
+            <div ui-sref=" contact">
+              <md-list-item md-ink-ripple>
+                Add City
+              </md-list-item>
+            </div>
+          </a>
+          <a href="#!/sharedcity" ng-click="toggleLeft()">
+            <div ui-sref="contact">
+              <md-list-item md-ink-ripple>
+                Shared With Me
+              </md-list-item>
+            </div>
+          </a>
+          <a href="#!/login">
+            <div ui-sref="contact" ng-click="toggleLeft()">
+              <md-list-item md-ink-ripple>
+                Logout
+              </md-list-item>
+            </div>
+          </a>
+        </md-list>
 
 
       </md-sidenav>

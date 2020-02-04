@@ -17,16 +17,20 @@
     </md-card-title>
     <md-card-content>
         <p>
-            <span class="md-temp">{{tempmin}}</span>
-            <span class="md-weather">Min</span>
+            <span class="md-temp" style="color:green;">{{tempmin}}</span>
 
-            <span class="md-temp">{{tempmax}}</span>
-            <span class="md-weather">Max</span>
+            <span class="md-temp" style="color:red;">{{tempmax}}</span>
+            <span class="md-weather" style="color:green;">Min</span>
+
+            <span class="md-weather" style="color:red;">Max</span>
 
             <br />
-            <br />  
+            <br />
             <md-button class="md-raised" ng-click="addcity()">ADD CITY+</md-button>
 
         </p>
     </md-card-content>
+    <span ng-show="added" style="color: green;">City {{city}} Added succsessfully</span>
+    <span ng-show="already" style="color: green;">City {{city}} already added</span>
+
 </md-card>
