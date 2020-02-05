@@ -11,15 +11,46 @@
         var vm = this;
         vm.user = null;
         $scope.cities = [];
-        $scope.parseInt = parseInt;
-
-        $scope.total = function(citytemp) { 
-            return (parseInt(citytemp) -273)
-          }
 
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
+
         $scope.sharedsuccess = false;
+
+
+        $scope.showConfirm = function (ev, city) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            var confirm = $mdDialog.confirm()
+                .title('Would you like to delete ' + city.name + ' card?')
+                .textContent('This card will be permanently deleted from your profile')
+                .ariaLabel('Lucky day')
+                .targetEvent(ev)
+                .ok('Delete')
+                .cancel('Cancel');
+
+            $mdDialog.show(confirm).then(function () {
+                let cityname = city.name;
+
+                console.log(cityname);
+                console.log(vm.user.city);
+
+                //  vm.user.city.push(cityname);
+                vm.user.city = vm.user.city.filter(item => item !== cityname)
+
+                console.log(vm.user.city);
+
+
+                $http.put('http://localhost:3000/users/' + vm.user.id, vm.user).then(handleSuccess);
+
+                loadInGrid();
+
+                // $scope.status = 'You decided to get rid of your debt.';
+            }, function () {
+                // $scope.status = 'You decided to keep your debt.';
+            });
+        };
+
+
         $scope.showPrompt = function (ev, city) {
             // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.prompt()
@@ -59,7 +90,7 @@
 
                             console.log(vm.allUsers[element]);
                             console.log("4");
-                            $scope.sharedsuccess = true;
+                            // $scope.cityname.sharedsuccess = true;
                             return $http.put('http://localhost:3000/users/' + vm.allUsers[element].id.toString(), vm.allUsers[element]).then(handleSuccess);
                             console.log("5");
                         }
@@ -68,7 +99,7 @@
 
                             if ((vm.allUsers[element].sharedcity).includes(cityname)) {
                                 console.log("6");
-                                $scope.sharedsuccess = true;
+                                //   $scope..sharedsuccess = true;
 
                                 console.log("Element already exist");
                             }
@@ -77,7 +108,7 @@
 
                                 (vm.allUsers[element].sharedcity).push(cityname);
                                 console.log("8");
-                                $scope.sharedsuccess = true;
+                                // $scope.cityname.sharedsuccess = true;
 
                                 return $http.put('http://localhost:3000/users/' + vm.allUsers[element].id.toString(), vm.allUsers[element]).then(handleSuccess);
                             }

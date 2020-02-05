@@ -17,10 +17,17 @@
                 <md-grid-tile ng-repeat='cityname in cities track by $index' md-rowspan="1" md-colspan="1">
 
                     <md-card class="cardmd" align="center">
-                        <md-button class="md-fab md-primary sharegridbtn" ng-click="showPrompt($event,cityname)"
-                            aria-label="Use Android">
-                            <md-icon md-svg-src="../img/share.svg"></md-icon>
-                        </md-button>
+                        <div class="btnsmain">
+                            <md-button class="md-fab md-primary sharegridbtn" ng-click="showPrompt($event,cityname)"
+                                aria-label="Shared Btn">
+                                <md-icon md-svg-src="../img/share.svg"></md-icon>
+                            </md-button>
+                            <md-button class="md-fab md-primary deletebtn" ng-click="showConfirm($event, cityname)"
+                                aria-label="Delete Btn">
+                                <md-icon md-svg-src="../img/delete.svg"></md-icon>
+                            </md-button>
+                        </div>
+
                         <md-card-title class="citytext">
                             <md-card-title-text class="cardcitytext">
                                 <span class="md-city" align="center">{{cityname.name}}</span>
@@ -30,7 +37,8 @@
                         <img ng-src="../img/{{cityname.weather[0].main}}.png" class="weatherlogo" alt="weather-logo">
                         <md-card-title class="citytext">
                             <md-card-title-text>
-                                <span class="md-temp" style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
+                                <span class="md-temp"
+                                    style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
 
                                 <span class="md-weather">{{cityname.weather[0].main}}</span>
                             </md-card-title-text>
@@ -38,22 +46,25 @@
                         </md-card-title>
                         <md-card-content>
                             <p>
-                                <span class="md-temp" style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
+                                <span class="md-temp"
+                                    style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
 
-                                <span class="md-temp" style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
+                                <span class="md-temp"
+                                    style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
                                 <br />
                                 <span class="md-weather" style="color:green;">Min</span>
 
                                 <span class="md-weather" style="color:red;">Max</span>
-
                                 <br />
-
+                                <span ng-show="sharedsuccess" style="color: green;">{{cityname.name}}
+                                    Shared
+                                    Successfully</span>
                             </p>
                         </md-card-content>
-                        <span ng-show="sharedsuccess" style="color: green;">City {{cityname.name}} Shared
-                            Successfully</span>
+
 
                     </md-card>
+
 
                 </md-grid-tile>
 
@@ -95,7 +106,8 @@
                                 alt="weather-logo">
                             <md-card-title>
                                 <md-card-title-text>
-                                    <span class="md-temp" style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
+                                    <span class="md-temp"
+                                        style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
 
                                     <span class="md-weatherlist">{{cityname.weather[0].main}}</span>
                                 </md-card-title-text>
@@ -104,10 +116,12 @@
                             <md-card-content>
                                 <p class="templist">
 
-                                    <span class="md-temp" style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
+                                    <span class="md-temp"
+                                        style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
                                     <span class="md-weather" style="color:green;">Min</span>
                                     <br />
-                                    <span class="md-temp" style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
+                                    <span class="md-temp"
+                                        style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
                                     <span class="md-weather" style="color:red;">Max</span>
 
                                     <br />

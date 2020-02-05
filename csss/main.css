@@ -226,6 +226,10 @@ a:focus {
   align-content: center;
   justify-content: center;
 }
+.btnmain {
+  display: flex;
+  flex-direction: row;
+}
 .sharegridbtn .md-button.md-fab {
   align-self: flex-end;
 }
