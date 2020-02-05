@@ -30,16 +30,17 @@
                         <img ng-src="../img/{{cityname.weather[0].main}}.png" class="weatherlogo" alt="weather-logo">
                         <md-card-title class="citytext">
                             <md-card-title-text>
-                                <span class="md-temp">{{cityname.main.temp}}</span>
+                                <span class="md-temp" style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
+
                                 <span class="md-weather">{{cityname.weather[0].main}}</span>
                             </md-card-title-text>
 
                         </md-card-title>
                         <md-card-content>
                             <p>
-                                <span class="md-temp" style="color:green;">{{cityname.main.temp_min}}</span>
+                                <span class="md-temp" style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
 
-                                <span class="md-temp" style="color:red;">{{cityname.main.temp_max}}</span>
+                                <span class="md-temp" style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
                                 <br />
                                 <span class="md-weather" style="color:green;">Min</span>
 
@@ -94,7 +95,8 @@
                                 alt="weather-logo">
                             <md-card-title>
                                 <md-card-title-text>
-                                    <span class="md-templist">{{cityname.main.temp}}</span>
+                                    <span class="md-temp" style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
+
                                     <span class="md-weatherlist">{{cityname.weather[0].main}}</span>
                                 </md-card-title-text>
 
@@ -102,10 +104,10 @@
                             <md-card-content>
                                 <p class="templist">
 
-                                    <span class="md-temp" style="color:green;">{{cityname.main.temp_min}}</span>
+                                    <span class="md-temp" style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
                                     <span class="md-weather" style="color:green;">Min</span>
                                     <br />
-                                    <span class="md-temp" style="color:red;">{{cityname.main.temp_max}}</span>
+                                    <span class="md-temp" style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
                                     <span class="md-weather" style="color:red;">Max</span>
 
                                     <br />

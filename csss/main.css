@@ -12,6 +12,7 @@ html {
 }
 body {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 ::selection {
   background-color: #210458;
@@ -164,10 +165,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 md-list-item {
-  size: 24px;
-}
-md-list-item:hover {
-  font-weight: bold;
+  size: 3rem;
 }
 .navi {
   text-decoration: none;
@@ -228,8 +226,8 @@ a:focus {
   align-content: center;
   justify-content: center;
 }
-.sharegridbtn {
-  margin-left: 100px;
+.sharegridbtn .md-button.md-fab {
+  align-self: flex-end;
 }
 .md-temp {
   padding-left: 2rem;
@@ -279,6 +277,7 @@ a:focus {
   height: 20rem;
   width: 25rem;
   align-items: top;
+  border-radius: 25px;
   margin-left: 3rem;
   margin-right: 3rem;
   align-content: center;
@@ -326,9 +325,10 @@ md-card-content {
 .cardmdlistadd {
   padding-right: 30rem;
   padding-left: 5rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   margin-top: 4rem;
+  border-radius: 25px;
   display: flex;
   align-self: center;
   align-content: stretch;
@@ -350,6 +350,9 @@ md-card-content {
   opacity: 0;
   background: white;
   transition: opacity 300ms linear;
+}
+.md-temp {
+  font-size: 2rem;
 }
 .searchcard {
   background-image: linear-gradient(to right top, #00ff9b, #5f84fb);

@@ -14,16 +14,16 @@
                     <img ng-src="{{vadimagePath}}" class="weatherlogo" alt="weather-logo">
                     <md-card-title>
                         <md-card-title-text>
-                            <span class="md-temp vadtemp">{{vadtemp}}</span>
+                            <span class="md-temp vadtemp">{{vadtemp-273.15 | number:0}}&#176;</span>
                             <span class="md-weather vadwet">{{vadweather}}</span>
                         </md-card-title-text>
 
                     </md-card-title>
                     <md-card-content>
                         <p>
-                            <span class="md-temp vad" style="color:green;">{{vadtempmin}}</span>
-
-                            <span class="md-temp vad" style="color:red;">{{vadtempmax}}</span>
+                            <span class="md-temp vad" style="color:green;">{{vadtempmin-273.15 | number:0}}&#176;</span>
+                            
+                            <span class="md-temp vad" style="color:red;">{{vadtempmax-273.15 | number:0}}&#176;</span>
                             <br />
                             <span class="md-weather vad" style="color:green;">Min</span>
 

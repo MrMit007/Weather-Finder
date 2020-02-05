@@ -30,6 +30,8 @@
     "angular-material": "^1.1.21",
     "angular-messages": "^1.7.9",
     "less": "^3.10.3",
+    "less-watch-compiler": "^1.14.6",
+    "live-server": "^1.2.1",
     "svg-assets-cache": "^1.1.3"
   }
 }

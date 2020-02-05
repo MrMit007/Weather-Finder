@@ -11,6 +11,12 @@
         var vm = this;
         vm.user = null;
         $scope.cities = [];
+        $scope.parseInt = parseInt;
+
+        $scope.total = function(citytemp) { 
+            return (parseInt(citytemp) -273)
+          }
+
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
         $scope.sharedsuccess = false;

@@ -10,16 +10,17 @@
     <img ng-src="{{imagePath}}" class="weatherlogo" alt="weather-logo">
     <md-card-title>
         <md-card-title-text>
-            <span class="md-temp">{{temp}}</span>
+            <span class="md-temp">{{temp-273.15 | number:0}}&#176;</span>
             <span class="md-weather">{{weather}}</span>
         </md-card-title-text>
 
     </md-card-title>
     <md-card-content>
         <p>
-            <span class="md-temp" style="color:green;">{{tempmin}}</span>
+            <span class="md-temp" style="color:green;">{{tempmin-273.15 | number:0}}&#176;</span>
 
-            <span class="md-temp" style="color:red;">{{tempmax}}</span>
+            <span class="md-temp" style="color:red;">{{tempmax-273.15 | number:0}}&#176;</span>
+            <br/>
             <span class="md-weather" style="color:green;">Min</span>
 
             <span class="md-weather" style="color:red;">Max</span>
