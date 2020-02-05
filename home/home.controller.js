@@ -43,6 +43,7 @@
                 $http.put('http://localhost:3000/users/' + vm.user.id, vm.user).then(handleSuccess);
 
                 loadInGrid();
+                loadInList();
 
                 // $scope.status = 'You decided to get rid of your debt.';
             }, function () {
