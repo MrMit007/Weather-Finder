@@ -2,7 +2,7 @@
     <app-weather-card>
 
         <div layout="column" ng-controller="SharedcityController as cardloader" ng-cloak=""
-            class="gridListdemoBasicUsage" ng-app="app">
+            class="gridListdemoBasicUsage" ng-app="app" ng-init="citysharedby">
 
             <md-switch class="switchmanager" ng-model="disptype" aria-label="Display Type"
                 ng-change="onChange(disptype)">
@@ -27,23 +27,27 @@
                         <img ng-src="../img/{{cityname.weather[0].main}}.png" class="weatherlogo" alt="weather-logo">
                         <md-card-title class="citytext">
                             <md-card-title-text>
-                                <span class="md-temp" style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
+                                <span class="md-temp"
+                                    style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
                                 <span class="md-weather">{{cityname.weather[0].main}}</span>
                             </md-card-title-text>
 
                         </md-card-title>
                         <md-card-content>
                             <p>
-                                <span class="md-temp" style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
+                                <span class="md-temp"
+                                    style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
 
-                                <span class="md-temp" style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
-                                <br/>
+                                <span class="md-temp"
+                                    style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
+                                <br />
                                 <span class="md-weather" style="color:green;">Min</span>
 
                                 <span class="md-weather" style="color:red;">Max</span>
-
                                 <br />
-
+                                <br />
+                                <span class="sharedbyemail" style="color:indigo;">Shared by<br />
+                                    {{citysharedby[$index]}}</span>
                             </p>
                         </md-card-content>
                     </md-card>

@@ -5,12 +5,14 @@
     @color-primary-dark
   );
   height: 100vh;
+  overflow: hidden;
 }
 
 .card-form {
   align-items: center;
   width: 35%;
   padding-top: 7%;
+  animation: invisibletovisible 2s ease-in;
   @media screen and (max-width: 1000px) {
     width: 50%;
   }
@@ -88,6 +90,7 @@
   margin-left: 40%;
   border-bottom: 1rem solid;
   display: table;
+  animation: invisibletovisible 2s ease-in;
 
   @media screen and (max-width: 1000px) {
     font-size: 250%;

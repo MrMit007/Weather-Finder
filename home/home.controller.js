@@ -86,10 +86,13 @@
                             console.log("2");
 
                             let sharedcityarray = [cityname];
+                            let sharedbyarray = [vm.user.username]
                             console.log("3");
                             vm.allUsers[element].sharedcity = sharedcityarray;
 
+                            vm.allUsers[element].sharedby = sharedbyarray;
                             console.log(vm.allUsers[element]);
+
                             console.log("4");
                             // $scope.cityname.sharedsuccess = true;
                             return $http.put('http://localhost:3000/users/' + vm.allUsers[element].id.toString(), vm.allUsers[element]).then(handleSuccess);
@@ -108,6 +111,9 @@
                                 console.log("7");
 
                                 (vm.allUsers[element].sharedcity).push(cityname);
+
+                                (vm.allUsers[element].sharedby).push(vm.user.username);
+
                                 console.log("8");
                                 // $scope.cityname.sharedsuccess = true;
 

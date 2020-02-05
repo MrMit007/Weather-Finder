@@ -15,7 +15,6 @@
         vm.deleteUser = deleteUser;
 
 
-
         $scope.datatype = "false";
         $scope.displabel = "Grid";
 
@@ -53,16 +52,18 @@
                     if (vm.user.sharedcity) {
                         console.log(vm.user.sharedcity);
                         // console.log(vm.user.city[]);
+                        console.log("111");
+                        $scope.citysharedby = vm.user.sharedby;
                         loadInGrid();
                     }
                     else {
-                        alert("No city shared");
+                        //  alert("No city shared");
                     }
                 });
         }
 
 
-        function loadInGrid() {
+        async function loadInGrid() {
             console.log("1");
             $scope.cities = [];
 
@@ -72,13 +73,17 @@
 
             while (vm.user.sharedcity[i]) {
                 console.log(vm.user.sharedcity[i]);
+                //  $scope.sharedby[i] = vm.user.sharedby[i];
+
+                console.log(1000);
+                // console.log(vm.user.sharedby[i]);
 
                 //console.log("http://api.openweathermap.org/data/2.5/weather?q=" + vm.user.sharedcity[i] + "&APPID=e4fbbdc28e9c62296fed91870dfc65dc");
                 let weturl = "http://api.openweathermap.org/data/2.5/weather?q=" + vm.user.sharedcity[i] + "&APPID=e4fbbdc28e9c62296fed91870dfc65dc";
 
                 let wetdata = [];
 
-                fetch(weturl)
+                await fetch(weturl)
                     .then((response) => {
                         return response.json();
                     })
@@ -88,7 +93,6 @@
                         console.log(wetdata);
                         arr.push(wetdata);
                         console.log(arr);
-                        loadAllUsers();
                     });
                 i++;
             }

@@ -64,7 +64,7 @@
   <div ng-controller="AppCtrl" layout="column" style="height: 500px;" ng-cloak>
 
 
-    <md-toolbar class="md-hue-2">
+    <md-toolbar ng-show="loginornot" class="md-hue-2">
       <div class="md-toolbar-tools">
         <img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebarlogo" ng-click="toggleLeft()">
         <img src="../img/logo.png" alt="marshmallow-logo" class="main-logo">
@@ -82,7 +82,7 @@
 
     <section layout="row" flex>
 
-      <md-sidenav class="md-sidenav-left sidebarfull" md-component-id="left" md-disable-backdrop="" md-whiteframe="6">
+      <md-sidenav ng-show="loginornot" class="md-sidenav-left sidebarfull" md-component-id="left" md-disable-backdrop="" md-whiteframe="6">
 
         <md-toolbar class="mdthemecolorful">
           <div class="sidepanel__top__uper ">

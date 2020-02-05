@@ -1,9 +1,8 @@
 angular
     .module('app')
-    .controller('AppCtrl', function ($scope, $mdSidenav, UserService, $rootScope) {
+    .controller('AppCtrl', function ($scope, $mdSidenav, UserService, $rootScope, $interval) {
         $scope.toggleLeft = buildToggler('left');
-        loadCurrentUser();
-
+        $scope.loginornot = false;
 
         function buildToggler(componentId) {
             loadCurrentUser();
@@ -12,6 +11,12 @@ angular
 
             };
         }
+
+
+        $interval(function () {
+            loadCurrentUser();
+        }, 100);
+        
 
         function loadCurrentUser() {
             let uid;
@@ -24,8 +29,11 @@ angular
                             console.log(uid.username);
                             $scope.uidd = uid.username;
                         }
+                        $scope.loginornot = true;
                     });
             } catch (error) {
+                $scope.loginornot = false;
+
                 console.log(error);
             }
         }
