@@ -39,6 +39,11 @@
 .md-weather {
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @media screen and (max-width: 700px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
 .cardmd {
@@ -66,6 +71,11 @@
 #vertical-container {
   height: 80rem;
   width: 100%;
+
+  @media screen and (max-width: 700px) {
+    height: 80rem;
+    width: 100%;
+  }
 }
 .virtualRepeatdemoVerticalUsage .repeated-item {
   border-bottom: 1px solid #ddd;
@@ -99,6 +109,25 @@
   margin-top: 4rem;
   box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2),
     0px 14px 20px 3px rgba(0, 0, 0, 0.14), 0px 8px 25px 7px rgba(0, 0, 0, 0.12);
+
+  @media screen and (max-width: 700px) {
+    height: 10rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 5rem;
+    border-radius: 12px;
+  }
+}
+
+.md-cardlist {
+}
+
+.btnslist {
+  @media screen and (max-width: 700px) {
+    position: absolute;
+    margin-top: -4rem;
+    right: 10%;
+  }
 }
 
 .weatherlogolist {
@@ -106,6 +135,10 @@
   width: 100px;
   align-self: center;
   align-content: center;
+  @media screen and (max-width: 700px) {
+    height: 60px;
+    width: 60px;
+  }
 }
 
 .cardcitytextlist {
@@ -119,6 +152,7 @@
   align-items: center;
 
   @media screen and (max-width: 700px) {
+    padding: 0px;
   }
 }
 
@@ -133,25 +167,37 @@ md-card-title-text {
 
 md-card-content {
   vertical-align: middle;
+  @media screen and (max-width: 700px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
 .templist {
   align-items: center;
   justify-content: center;
   padding-top: 8rem;
+
+  @media screen and (max-width: 700px) {
+    padding-top: 3rem;
+  }
 }
 
 .addlogolist {
   height: 150px;
   width: 150px;
   align-self: center;
+  @media screen and (max-width: 700px) {
+    height: 75px;
+    width: 75px;
+  }
 }
 
 .cardmdlistadd {
-  padding-right: 30rem;
-  padding-left: 5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-right: 30%;
+  padding-left: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
   margin-top: 4rem;
   border-radius: 25px;
 
@@ -167,4 +213,31 @@ md-card-content {
   align-content: center;
   box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2),
     0px 14px 20px 3px rgba(0, 0, 0, 0.14), 0px 8px 25px 7px rgba(0, 0, 0, 0.12);
+
+  @media screen and (max-width: 700px) {
+    height: 10rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+
+    margin-right: 1rem;
+    margin-top: 5rem;
+    border-radius: 12px;
+  }
+}
+
+.sharedbyemaillist {
+  display: inline-block;
+  position: absolute;
+  margin-top: 17rem;
+  text-align: center;
+  width: 100%;
+
+  @media screen and (max-width: 700px) {
+    margin-top: 7rem;
+    margin: auto;
+  }
+}
+
+.listinsharedpage {
+  padding: 0px !important;
 }

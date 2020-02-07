@@ -202,18 +202,18 @@ md-list-item {
 .divider {
   border-bottom: 1px solid 1 !important;
 }
-a {
+.navigationicons {
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 1rem 2rem;
   color: #5f84fb;
 }
-a:hover {
+.navigationicons :hover {
   background-color: 1;
   text-decoration: none !important;
 }
-a:focus {
+.navigationicons :focus {
   background-color: 1;
   text-decoration: none !important;
 }
@@ -252,6 +252,12 @@ a:focus {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+@media screen and (max-width: 700px) {
+  .md-weather {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
 .cardmd {
   height: 42rem;
   width: 25rem;
@@ -273,6 +279,12 @@ a:focus {
 #vertical-container {
   height: 80rem;
   width: 100%;
+}
+@media screen and (max-width: 700px) {
+  #vertical-container {
+    height: 80rem;
+    width: 100%;
+  }
 }
 .virtualRepeatdemoVerticalUsage .repeated-item {
   border-bottom: 1px solid #ddd;
@@ -302,11 +314,33 @@ a:focus {
   margin-top: 4rem;
   box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 14px 20px 3px rgba(0, 0, 0, 0.14), 0px 8px 25px 7px rgba(0, 0, 0, 0.12);
 }
+@media screen and (max-width: 700px) {
+  .cardmdlist {
+    height: 10rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 5rem;
+    border-radius: 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .btnslist {
+    position: absolute;
+    margin-top: -4rem;
+    right: 10%;
+  }
+}
 .weatherlogolist {
   height: 100px;
   width: 100px;
   align-self: center;
   align-content: center;
+}
+@media screen and (max-width: 700px) {
+  .weatherlogolist {
+    height: 60px;
+    width: 60px;
+  }
 }
 .cardcitytextlist {
   align-content: center;
@@ -316,6 +350,11 @@ a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 700px) {
+  .citytextlist {
+    padding: 0px;
+  }
 }
 .card__titlelist {
   text-transform: uppercase;
@@ -327,21 +366,38 @@ md-card-title-text {
 md-card-content {
   vertical-align: middle;
 }
+@media screen and (max-width: 700px) {
+  md-card-content {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
 .templist {
   align-items: center;
   justify-content: center;
   padding-top: 8rem;
+}
+@media screen and (max-width: 700px) {
+  .templist {
+    padding-top: 3rem;
+  }
 }
 .addlogolist {
   height: 150px;
   width: 150px;
   align-self: center;
 }
+@media screen and (max-width: 700px) {
+  .addlogolist {
+    height: 75px;
+    width: 75px;
+  }
+}
 .cardmdlistadd {
-  padding-right: 30rem;
-  padding-left: 5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-right: 30%;
+  padding-left: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
   margin-top: 4rem;
   border-radius: 25px;
   display: flex;
@@ -354,6 +410,32 @@ md-card-content {
   align-items: top;
   align-content: center;
   box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 14px 20px 3px rgba(0, 0, 0, 0.14), 0px 8px 25px 7px rgba(0, 0, 0, 0.12);
+}
+@media screen and (max-width: 700px) {
+  .cardmdlistadd {
+    height: 10rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 5rem;
+    border-radius: 12px;
+  }
+}
+.sharedbyemaillist {
+  display: inline-block;
+  position: absolute;
+  margin-top: 17rem;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (max-width: 700px) {
+  .sharedbyemaillist {
+    margin-top: 7rem;
+    margin: auto;
+  }
+}
+.listinsharedpage {
+  padding: 0px !important;
 }
 .main-container__bg {
   height: 100%;
@@ -369,9 +451,16 @@ md-card-content {
 .md-temp {
   font-size: 2rem;
 }
+.md-templ {
+  font-size: 2rem;
+}
+@media screen and (max-width: 700px) {
+  .md-templ {
+    font-size: 1.5rem;
+  }
+}
 .searchcard {
-  background-image: linear-gradient(to right top, #00ff9b, #5f84fb);
-  height: 100vh;
+  height: 100%;
 }
 .cardadd {
   background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(33, 4, 88, 0.5) 50%), url("../img/mountain.jpg");
@@ -578,7 +667,7 @@ md-card-content {
     -o-background-size: cover;
     background-size: cover;
     border-radius: 2rem;
-    height: 70vh;
+    height: 90vh;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
   }
 }

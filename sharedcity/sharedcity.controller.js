@@ -100,7 +100,8 @@
         }
 
 
-        function loadInList() {
+
+        async function loadInList() {
             $scope.CTS = [];
 
             var i = 0;
@@ -115,7 +116,7 @@
 
                 let wetdata = [];
 
-                fetch(weturl)
+                await fetch(weturl)
                     .then((response) => {
                         return response.json();
                     })

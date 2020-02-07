@@ -16,7 +16,7 @@ angular
         $interval(function () {
             loadCurrentUser();
         }, 100);
-        
+
 
         function loadCurrentUser() {
             let uid;
@@ -24,9 +24,9 @@ angular
                 UserService.GetByUsername($rootScope.globals.currentUser.username)
                     .then(function (user) {
                         uid = user[0];
-                        console.log("Current ids:");
+                        // console.log("Current ids:");
                         if (user[0]) {
-                            console.log(uid.username);
+                            //console.log(uid.username);
                             $scope.uidd = uid.username;
                         }
                         $scope.loginornot = true;
@@ -34,7 +34,7 @@ angular
             } catch (error) {
                 $scope.loginornot = false;
 
-                console.log(error);
+                //console.log(error);
             }
         }
     });

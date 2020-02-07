@@ -46,7 +46,7 @@
                                 <span class="md-weather" style="color:red;">Max</span>
                                 <br />
                                 <br />
-                                <span class="sharedbyemail" style="color:indigo;">Shared by<br />
+                                <span class="sharedbyemail" style="color:indigo;">Shared by<br/>
                                     {{citysharedby[$index]}}</span>
                             </p>
                         </md-card-content>
@@ -60,7 +60,7 @@
             <!--List-->
             <md-virtual-repeat-container ng-show="disptype" id="vertical-container">
                 <md-list>
-                    <md-list-item md-virtual-repeat="cityname in CTS" class="noright">
+                    <md-list-item md-virtual-repeat="cityname in CTS" class="noright listinsharedpage">
                         <!--md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat"
                                 md-svg-icon="communication:message"></md-icon-->
                         <md-card class="cardmdlist" align="center">
@@ -74,22 +74,27 @@
                                 alt="weather-logo">
                             <md-card-title>
                                 <md-card-title-text>
-                                    <span class="md-temp" style="font-weight: bold;">{{cityname.main.temp}}</span>
+                                    <span class="md-templ"
+                                        style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
                                     <span class="md-weatherlist">{{cityname.weather[0].main}}</span>
                                 </md-card-title-text>
 
                             </md-card-title>
                             <md-card-content>
                                 <p class="templist">
-                                    <span class="md-temp" style="color:green;">{{cityname.main.temp_min}}</span>
+                                    <span class="md-templ"
+                                        style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
                                     <span class="md-weather" style="color:green;">Min</span>
                                     <br />
-                                    <span class="md-temp" style="color:red;">{{cityname.main.temp_max}}</span>
+                                    <span class="md-templ"
+                                        style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
                                     <span class="md-weather" style="color:red;">Max</span>
                                     <br />
                                 </p>
                             </md-card-content>
+                            <span class="sharedbyemaillist" style="color:indigo;">Shared  by {{citysharedby[$index]}}</span>
                         </md-card>
+
                     </md-list-item>
                 </md-list>
             </md-virtual-repeat-container>

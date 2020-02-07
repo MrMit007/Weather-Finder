@@ -106,21 +106,21 @@
                                 alt="weather-logo">
                             <md-card-title>
                                 <md-card-title-text>
-                                    <span class="md-temp"
+                                    <span class="md-templ"
                                         style="font-weight: bold;">{{cityname.main.temp-273.15 | number:0}}&#176;</span>
 
                                     <span class="md-weatherlist">{{cityname.weather[0].main}}</span>
                                 </md-card-title-text>
 
                             </md-card-title>
-                            <md-card-content>
+                            <md-card-content align="center">
                                 <p class="templist">
 
-                                    <span class="md-temp"
+                                    <span class="md-templ"
                                         style="color:green;">{{cityname.main.temp_min-273.15 | number:0}}&#176;</span>
                                     <span class="md-weather" style="color:green;">Min</span>
                                     <br />
-                                    <span class="md-temp"
+                                    <span class="md-templ"
                                         style="color:red;">{{cityname.main.temp_max-273.15 | number:0}}&#176;</span>
                                     <span class="md-weather" style="color:red;">Max</span>
 
@@ -128,13 +128,17 @@
 
                                 </p>
                             </md-card-content>
-                            <md-button class="md-fab md-primary" ng-click="showPrompt($event,cityname)"
-                                id="listsharedbtn" aria-label="Use Android">
-                                <md-icon md-svg-src="../img/share.svg"></md-icon>
-                            </md-button>
-                            <md-button class="md-fab md-primary deletebtn" ng-click="showConfirm($event, cityname)" aria-label="Delete Btn">
-                                <md-icon md-svg-src="../img/delete.svg"></md-icon>
-                            </md-button>
+
+                            <div class="btnslist">
+                                <md-button class="md-fab md-primary btnoflist" ng-click="showPrompt($event,cityname)"
+                                    id="listsharedbtn" aria-label="Use Android">
+                                    <md-icon md-svg-src="../img/share.svg"></md-icon>
+                                </md-button>
+                                <md-button class="md-fab md-primary btnoflist"
+                                    ng-click="showConfirm($event, cityname)" aria-label="Delete Btn">
+                                    <md-icon md-svg-src="../img/delete.svg"></md-icon>
+                                </md-button>
+                            </div>
 
                         </md-card>
                     </md-list-item>

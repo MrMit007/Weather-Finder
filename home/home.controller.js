@@ -56,7 +56,7 @@
             // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.prompt()
                 .title('Enter Email ID to share')
-                .textContent('Bowser is a common name.')
+                .textContent('You have to enter correct email address.')
                 .placeholder('Email')
                 .ariaLabel('Email')
                 .initialValue('')
