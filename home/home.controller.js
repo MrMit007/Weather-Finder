@@ -96,12 +96,12 @@
                             console.log("4");
                             // $scope.cityname.sharedsuccess = true;
                             return $http.put('http://localhost:3000/users/' + vm.allUsers[element].id.toString(), vm.allUsers[element]).then(handleSuccess);
-                            console.log("5");
+                            console.log("5");   
                         }
                         else {
                             console.log("5");
 
-                            if ((vm.allUsers[element].sharedcity).includes(cityname)) {
+                            if ((vm.allUsers[element].sharedcity).includes(cityname)) { 
                                 console.log("6");
                                 //   $scope..sharedsuccess = true;
 

@@ -70,7 +70,7 @@
         <img src="../img/logo.png" alt="marshmallow-logo" class="main-logo">
 
 
-        <h2 flex md-truncate style="font-weight: bold;">Minimus</h2>
+        <h2 flex md-truncate style="font-weight: bold; font-size: 3rem;">Minimus</h2>
 
         <span class="day-text">Today</span>
 
@@ -82,7 +82,8 @@
 
     <section layout="row" flex>
 
-      <md-sidenav ng-show="loginornot" class="md-sidenav-left sidebarfull" md-component-id="left" md-disable-backdrop="" md-whiteframe="6">
+      <md-sidenav ng-show="loginornot" class="md-sidenav-left sidebarfull" md-component-id="left" md-disable-backdrop=""
+        md-whiteframe="6">
 
         <md-toolbar class="mdthemecolorful">
           <div class="sidepanel__top__uper ">
@@ -96,75 +97,41 @@
             </div>
           </div>
         </md-toolbar>
-        <br/>
-        
+        <br />
 
-        <nav class="nav-mobile">
+        <md-list flex>
           <ul class="nav-mobile-list" ng-click="toggleLeft()">
-            <li class="divider"></li>
-            <li><a href="#!/" class="navigationicons"><i class="material-icons">home</i> Home</a></li>
-            <li class="divider"></li>
+            <md-list-item class="md-4-line" ng-click="null" ng-href="#!/">
+              <div class="md-list-item-text" layout="column">
+                <li><i class="material-icons">home</i> Home</li>
+              </div>
+            </md-list-item>
 
-            <li><a href="#!/add" class="navigationicons"><i class="material-icons">search</i> Search City</a></li>
-            <li class="divider"></li>
-            <li><a href="#!/sharedcity" class="navigationicons"><i class="material-icons">share</i> Shareed With You</a></li>
-            <li class="divider"></li>
-
-            <li><a href="#!/login" class="navigationicons"><i class="material-icons">logout</i> Logout</a></li>
-            <li class="divider"></li>
+            <md-list-item class="md-4-line" ng-click="null" ng-href="#!/add">
+              <div class="md-list-item-text" layout="column">
+                <li><i class="material-icons">search</i> Search City</li>
+              </div>
+            </md-list-item>
+            <md-list-item class="md-4-line" ng-click="null" ng-href="#!/sharedcity">
+              <div class="md-list-item-text" layout="column">
+                <li><i class="material-icons">share</i> Shareed With Me
+              </div>
+            </md-list-item>
+            <md-list-item class="md-4-line" ng-click="null" ng-href="#!/login">
+              <div class="md-list-item-text" layout="column">
+                <li><i class="material-icons">logout</i> Logout</li>
+              </div>
+            </md-list-item>
           </ul>
-        </nav>
+        </md-list>
 
 
-
+        <span class="footer"> Copyright © 2020 Minimus </span>
       </md-sidenav>
 
     </section>
 
     <div ng-view></div>
-
-
-    <!--section class="section-book">
-      <div class="row">
-        <div class="book">
-          <div class="book__form">
-            <form action="#" class="form">
-              <div class="u-margin-bottom-medium">
-                <h2 class="heading-secondary">
-                  Start booking now
-                </h2>
-              </div>
-
-              <div class="form__group">
-                <input
-                  type="text"
-                  class="form__input"
-                  placeholder="Full name"
-                  id="name"
-                  required
-                />
-                <label for="email" class="form__label">Email</label>
-              </div>
-
-              <div class="form__group">
-                <input
-                  type="email"
-                  class="form__input"
-                  placeholder="Email address"
-                  id="email"
-                  required
-                />
-                <label for="password" class="form__label">password</label>
-              </div>
-
-              <div class="form__group">
-                <button class="btn btn--green">Next step &rarr;</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </!--section-->
 
   </div>
 

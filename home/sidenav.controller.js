@@ -32,8 +32,7 @@ angular
                         $scope.loginornot = true;
                     });
             } catch (error) {
-                $scope.loginornot = false;
-
+                $scope.loginornot = false;  
                 //console.log(error);
             }
         }

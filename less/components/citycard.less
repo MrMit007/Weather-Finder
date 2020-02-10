@@ -17,11 +17,6 @@
   letter-spacing: 0.1rem;
 }
 
-.switchmanager {
-  align-content: center;
-  justify-content: center;
-}
-
 .btnmain {
   display: flex;
   flex-direction: row;
@@ -37,13 +32,8 @@
 }
 
 .md-weather {
-  padding-left: 2rem;
-  padding-right: 2rem;
-
-  @media screen and (max-width: 700px) {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
 }
 
 .cardmd {
@@ -96,17 +86,17 @@
 }
 
 .cardmdlist {
-  height: 20rem;
+  height: 12rem;
   width: 25rem;
   align-items: top;
-  border-radius: 25px;
+  border-radius: 20px;
   margin-left: 3rem;
   margin-right: 3rem;
   align-content: center;
   display: flex;
   flex-grow: 1;
   flex-direction: row;
-  margin-top: 4rem;
+  margin-top: 2rem;
   box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2),
     0px 14px 20px 3px rgba(0, 0, 0, 0.14), 0px 8px 25px 7px rgba(0, 0, 0, 0.12);
 
@@ -114,19 +104,22 @@
     height: 10rem;
     margin-left: 1rem;
     margin-right: 1rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     border-radius: 12px;
   }
 }
 
-.md-cardlist {
-}
-
 .btnslist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
   @media screen and (max-width: 700px) {
     position: absolute;
-    margin-top: -4rem;
-    right: 10%;
+    flex-direction: row;
+    margin-top: -4.5rem;
+    right: 1px;
   }
 }
 
@@ -173,10 +166,14 @@ md-card-content {
   }
 }
 
+.md-citylist {
+  font-size: 1.5rem;
+}
+
 .templist {
   align-items: center;
   justify-content: center;
-  padding-top: 8rem;
+  padding-top: 3rem;
 
   @media screen and (max-width: 700px) {
     padding-top: 3rem;
@@ -184,8 +181,8 @@ md-card-content {
 }
 
 .addlogolist {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   align-self: center;
   @media screen and (max-width: 700px) {
     height: 75px;
@@ -198,7 +195,7 @@ md-card-content {
   padding-left: 1rem;
   margin-left: 3rem;
   margin-right: 3rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
   border-radius: 25px;
 
   display: flex;
@@ -208,7 +205,7 @@ md-card-content {
   flex-grow: 1;
   flex-direction: row;
 
-  height: 20rem;
+  height: 12rem;
   align-items: top;
   align-content: center;
   box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2),
@@ -220,7 +217,7 @@ md-card-content {
     padding-left: 1rem;
 
     margin-right: 1rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     border-radius: 12px;
   }
 }
