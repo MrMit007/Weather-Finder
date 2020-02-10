@@ -15,7 +15,7 @@ angular
 
         $interval(function () {
             loadCurrentUser();
-        }, 100);
+        }, 1000);
 
 
         function loadCurrentUser() {
@@ -32,7 +32,7 @@ angular
                         $scope.loginornot = true;
                     });
             } catch (error) {
-                $scope.loginornot = false;  
+                $scope.loginornot = false;
                 //console.log(error);
             }
         }

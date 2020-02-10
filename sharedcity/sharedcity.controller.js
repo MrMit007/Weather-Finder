@@ -12,7 +12,6 @@
         vm.user = null;
         $scope.cities = [];
         vm.allUsers = [];
-        vm.deleteUser = deleteUser;
 
 
         $scope.datatype = "false";
@@ -146,12 +145,7 @@
                 });
         }
 
-        function deleteUser(id) {
-            UserService.Delete(id)
-                .then(function () {
-                    loadAllUsers();
-                });
-        }
+   
     }
 
 })();

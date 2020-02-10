@@ -14,8 +14,6 @@
         service.GetById = GetById;
         service.GetByUsername = GetByUsername;
         service.Create = Create;
-        service.Update = Update;
-        service.Delete = Delete;
 
         return service;
 
@@ -59,21 +57,11 @@
             }, 1000);*/
 
 
-
         }
-
-        function Update(user) {
-            return $http.put('http://localhost:3000/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
-        }
-
-        function Delete(id) {
-            return $http.delete('http://localhost:3000/users/' + id).then(handleSuccess, handleError('Error deleting user'));
-        }
-
         // private functions
 
         function handleSuccess(res) {
-         //   console.log(res.data);
+            //   console.log(res.data);
             return res.data;
         }
 

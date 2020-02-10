@@ -13,7 +13,6 @@
         $scope.cities = [];
 
         vm.allUsers = [];
-        vm.deleteUser = deleteUser;
 
         $scope.sharedsuccess = false;
 
@@ -260,12 +259,6 @@
                 });
         }
 
-        function deleteUser(id) {
-            UserService.Delete(id)
-                .then(function () {
-                    loadAllUsers();
-                });
-        }
     }
 
 })();
