@@ -12,32 +12,32 @@
         $routeProvider
             .when("/", {
                 controller: "HomeController",
-                templateUrl: "home/home.view.html",
+                templateUrl: "pages/home/home.view.html",
                 controllerAs: "vm"
             })
 
             .when("/login", {
                 controller: "LoginController",
-                templateUrl: "login/login.view.html",
+                templateUrl: "pages/login/login.view.html",
                 controllerAs: "vm"
             })
 
             .when("/register", {
                 controller: "RegisterController",
-                templateUrl: "register/register.view.html",
+                templateUrl: "pages/register/register.view.html",
                 controllerAs: "vm"
             })
 
             .when("/add", {
                 controller: "AddController",
-                templateUrl: "add/add.view.html",
+                templateUrl: "pages/add/add.view.html",
                 controllerAs: "vm"
             })
 
             .when("/sharedcity", {
                 controller: "SharedcityController",
-                templateUrl: "sharedcity/sharedcity.view.html",
-                controllerAs: "v    m"
+                templateUrl: "pages/sharedcity/sharedcity.view.html",
+                controllerAs: "vm"
             })
 
             .otherwise({ redirectTo: "/login" });

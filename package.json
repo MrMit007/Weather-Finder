@@ -4,9 +4,9 @@
   "description": "Weather application which provides weather information of your choosen city.",
   "main": "index.js",
   "scripts": {
-    "watch:less": "less-watch-compiler less csss main.less",
+    "watch:less": "less-watch-compiler assets/less assets/buildcss main.less",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver watch:less"
+    "start": "npm-run-all --parallel devserver  watch:less"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
   "homepage": "https://github.com/MrMit007/Weather-Finder#readme",
   "devDependencies": {
     "json-server": "^0.15.1",
-    "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5"
   },
   "dependencies": {

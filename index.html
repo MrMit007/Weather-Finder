@@ -28,69 +28,58 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script src="app.js"></script>
-  <script src="app-services/authentication.service.js"></script>
-  <script src="app-services/flash.service.js"></script>
-
-  <!-- Real user service that uses an api -->
-  <script src="app-services/user.service.js"></script>
+  <script src="services/authentication.service.js"></script>
+  <script src="services/user.service.js"></script>
 
   <!-- Fake user service for demo that uses local storage -->
   <!--script src="app-services/user.service.local-storage.js"-->
   <!--/script-->
 
-  <script src="home/home.controller.js"></script>
-  <script src="login/login.controller.js"></script>
-  <script src="register/register.controller.js"></script>
-  <script src="home/sidenav.controller.js"></script>
-  <script src="add/add.controller.js"></script>
-  <script src="home/cardload.controller.js"></script>
-  <script src="sharedcity/sharedcity.controller.js"></script>
+  <script src="pages/home/home.controller.js"></script>
+  <script src="pages/login/login.controller.js"></script>
+  <script src="pages/register/register.controller.js"></script>
+  <script src="pages/sidebar/sidenav.controller.js"></script>
+  <script src="pages/add/add.controller.js"></script>
+  <script src="pages/sharedcity/sharedcity.controller.js"></script>
   <!--<link rel="stylesheet" href="css/icon-font.css">-->
 
 
-  <link rel="stylesheet" href="csss/main.css" />
+  <!--css style sheets-->
+  <link rel="stylesheet" href="assets/buildcss/main.css" />
   <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-  <link rel="shortcut icon" type="image/png" href="img/logo.png" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css" />
+
+  <!--favicon-->
+  <link rel="shortcut icon" type="image/png" href="assets/img/logo.png" />
 
   <title>Weather App</title>
 </head>
 
 <body>
 
-  <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }"
-    ng-if="flash" ng-bind="flash.message"></div>
-
+  <!--Sidebar and Header Controller-->
   <div ng-controller="AppCtrl" layout="column" style="height: 500px;" ng-cloak>
 
-
+    <!--header-->
     <md-toolbar ng-show="loginornot" class="md-hue-2">
       <div class="md-toolbar-tools">
-        <img src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebarlogo" ng-click="toggleLeft()">
-        <img src="../img/logo.png" alt="marshmallow-logo" class="main-logo">
-
-
+        <img src="assets/img/sidebar-logo.png" alt="sidebar-logo" class="sidebarlogo" ng-click="toggleLeft()">
+        <img src="assets/img/logo.png" alt="marshmallow-logo" class="main-logo">
         <h2 flex md-truncate style="font-weight: bold; font-size: 3rem;">Minimus</h2>
-
         <span class="day-text">Today</span>
-
       </div>
     </md-toolbar>
 
-
-
-
+    <!--sidebar-->
     <section layout="row" flex>
-
       <md-sidenav ng-show="loginornot" class="md-sidenav-left sidebarfull" md-component-id="left" md-disable-backdrop=""
         md-whiteframe="6">
-
         <md-toolbar class="mdthemecolorful">
           <div class="sidepanel__top__uper ">
-            <img ng-src="../img/sidebar-logo.png" alt="sidebar-logo" class="sidebar-logo" ng-click="toggleLeft()">
+            <img ng-src="assets/img/sidebar-logo.png" alt="sidebar-logo" class="sidebar-logo" ng-click="toggleLeft()">
             <span class="sidepanel__top__uper__welcome">WELCOME BACK</span>
           </div>
-          <div class="sidepanel__top__lower"><img ng-src="../img/user.png" class="sidepanel__top__lower__img">
+          <div class="sidepanel__top__lower"><img ng-src="assets/img/user.png" class="sidepanel__top__lower__img">
             <div class="sidepanel__top__lower__details">
               <span class="sidepanel__top__lower__details__email">{{uidd}}</span>
               <span class="sidepanel__top__lower__details__plan"> Free Plan</span>
@@ -98,7 +87,6 @@
           </div>
         </md-toolbar>
         <br />
-
         <md-list flex>
           <ul class="nav-mobile-list" ng-click="toggleLeft()">
             <md-list-item class="md-4-line" ng-click="null" ng-href="#!/">
@@ -106,7 +94,6 @@
                 <li><i class="material-icons">home</i> Home</li>
               </div>
             </md-list-item>
-
             <md-list-item class="md-4-line" ng-click="null" ng-href="#!/add">
               <div class="md-list-item-text" layout="column">
                 <li><i class="material-icons">search</i> Search City</li>
@@ -114,10 +101,10 @@
             </md-list-item>
             <md-list-item class="md-4-line" ng-click="null" ng-href="#!/sharedcity">
               <div class="md-list-item-text" layout="column">
-                <li><i class="material-icons">share</i> Shareed With Me
+                <li><i class="material-icons">share</i> Shared With Me
               </div>
             </md-list-item>
-            <md-list-item class="md-4-line" ng-click="null" ng-href="#!/login">
+            <md-list-item class="md-4-line" ng-click="removeheader()">
               <div class="md-list-item-text" layout="column">
                 <li><i class="material-icons">logout</i> Logout</li>
               </div>
@@ -125,12 +112,14 @@
           </ul>
         </md-list>
 
-
+        <!--footer inside sidebar-->
         <span class="footer"> Copyright © 2020 Minimus </span>
       </md-sidenav>
 
     </section>
 
+
+    <!--Angular view call-->
     <div ng-view></div>
 
   </div>
