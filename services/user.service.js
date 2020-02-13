@@ -5,7 +5,7 @@
         .module('app')
         .factory('UserService', UserService);
 
-    UserService.$inject = ['$http', '$q'];
+    UserService.$inject = ['$http'];
     function UserService($http) {
 
         var service = {};
@@ -23,7 +23,7 @@
         }
 
         function GetById(id) {
-            return $http.get('http://localhost:3000/users/' + id).then(handleSuccess, handleError('Error getting user by id'));
+            return $http.get('http://localhost:3000/users/' + id).then(handleSuccess);
         }
 
         function GetByUsername(username) {
@@ -31,47 +31,12 @@
         }
 
         function Create(user) {
-
             return $http.post('http://localhost:3000/users/', user).then(handleSuccess);
-
-
-            /* var deferred = $q.defer();
-
-            $timeout(function () {
-                GetByUsername(user.username).then(function (duplicateUser) {
-                    if (duplicateUser !== null) {
-                        console.log("Email ID is already taken.");
-                        deferred.resolve({ success: false, message: 'Email ID "' + user.username + '" is already taken' });
-                        return deferred.promise;
-
-
-                    }
-                    else {
-                        deferred.resolve({ success: true });
-                    }
-
-                }).then(function (adduser) {
-                    return $http.post('http://localhost:3000/users/', user).then(handleSuccess);
-                });
-
-            }, 1000);*/
-
-
         }
-        // private functions
 
         function handleSuccess(res) {
-            //   console.log(res.data);
             return res.data;
         }
-
-        /*function handleError(error) {
-
-            console.log("Error:" + error);
-            return function () {
-                return { success: false, message: error };
-            };
-        }*/
     }
 
 })();

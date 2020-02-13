@@ -205,7 +205,7 @@ md-list-item {
   vertical-align: middle;
 }
 .divider {
-  border-bottom: 1px solid 1 !important;
+  border-bottom: 1px solid #000000;
 }
 .navigationicons {
   display: flex;
@@ -216,11 +216,11 @@ md-list-item {
 }
 .navigationicons :hover {
   background-color: 1;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 .navigationicons :focus {
   background-color: 1;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 .footer {
   justify-content: center;

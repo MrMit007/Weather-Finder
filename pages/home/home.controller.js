@@ -6,8 +6,8 @@
         .controller('HomeController', HomeController)
 
 
-    HomeController.$inject = ['UserService', '$rootScope', '$scope', '$mdDialog', '$http'];
-    function HomeController(UserService, $rootScope, $scope, $mdDialog, $http, ) {
+    HomeController.$inject = ['UserService', '$rootScope', '$scope', '$mdDialog', '$http', 'WeatherapiService'];
+    function HomeController(UserService, $rootScope, $scope, $mdDialog, $http, WeatherapiService) {
         var vm = this;
         vm.user = null;
         $scope.cities = [];
@@ -184,6 +184,12 @@
 
 
         function loadInGrid() {
+
+            console.log("Load in grid called");
+            console.log(vm.user.city);
+            console.log("Load in grid call ended");
+
+
             $scope.cities = [];
 
             var i = 0;
@@ -191,7 +197,7 @@
             let arr = [];
 
             while (vm.user.city[i]) {
-                console.log(vm.user.city[i]);
+                console.log("   LIT");
 
                 //console.log("http://api.openweathermap.org/data/2.5/weather?q=" + vm.user.city[i] + "&APPID=e4fbbdc28e9c62296fed91870dfc65dc");
                 let weturl = "http://api.openweathermap.org/data/2.5/weather?q=" + vm.user.city[i] + "&APPID=e4fbbdc28e9c62296fed91870dfc65dc";
@@ -213,6 +219,7 @@
                 i++;
             }
             $scope.cities = arr;
+
         }
 
 
