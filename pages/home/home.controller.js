@@ -6,8 +6,8 @@
         .controller('HomeController', HomeController)
 
 
-    HomeController.$inject = ['UserService', '$rootScope', '$scope', '$mdDialog', '$http', 'WeatherapiService'];
-    function HomeController(UserService, $rootScope, $scope, $mdDialog, $http, WeatherapiService) {
+    HomeController.$inject = ['UserService', '$rootScope', '$scope', '$mdDialog', '$http'];
+    function HomeController(UserService, $rootScope, $scope, $mdDialog, $http) {
         var vm = this;
         vm.user = null;
         $scope.cities = [];
