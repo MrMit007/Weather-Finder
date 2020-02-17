@@ -6,7 +6,8 @@
   "scripts": {
     "watch:less": "less-watch-compiler assets/less assets/buildcss main.less",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver  watch:less"
+    "jsonserver": "json-server --watch db.json",
+    "start": "npm-run-all --parallel devserver  watch:less jsonserver"
   },
   "repository": {
     "type": "git",

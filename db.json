@@ -1,0 +1,129 @@
+{
+  "users": [
+    {
+      "firstName": "Mit",
+      "lastName": "Patel",
+      "username": "mit@gmail.com",
+      "password": "mit",
+      "id": 1,
+      "city": [
+        "Florida",
+        "Mumbai",
+        "California",
+        "Louisiana",
+        "Connecticut",
+        "Georgia",
+        "Mississippi"
+      ],
+      "sharedcity": [
+        "Connecticut",
+        "New Jersey",
+        "Arizona",
+        "Mumbai"
+      ],
+      "sharedby": [
+        "bansi@gmail.com",
+        "mit@gmail.com",
+        "mitangi@gmail.com",
+        "mit@gmail.com"
+      ]
+    },
+    {
+      "firstName": "Bansi",
+      "lastName": "Donga",
+      "username": "bansi@gmail.com",
+      "password": "bansi",
+      "id": 4,
+      "city": [
+        "Colorado",
+        "Florida",
+        "California",
+        "Arkansas"
+      ],
+      "sharedcity": [
+        "Florida",
+        "Alaska"
+      ],
+      "sharedby": [
+        "bansi@gmail.com",
+        "mit@gmail.com"
+      ]
+    },
+    {
+      "firstName": "Mit",
+      "lastName": "Patel",
+      "username": "mitpatel23897@gmail.com",
+      "password": "mit",
+      "id": 5,
+      "city": [
+        "Vadodara",
+        "Colorado"
+      ],
+      "sharedcity": [
+        "Arizona",
+        "New Jersey",
+        "West Virginia"
+      ],
+      "sharedby": [
+        "mitpatel23897@gmail.com",
+        "mitpatel23897@gmail.com",
+        "mitpatel23897@gmail.com"
+      ]
+    },
+    {
+      "firstName": "mit",
+      "lastName": "p",
+      "username": "patel@mail.com",
+      "password": "patel",
+      "id": 12,
+      "sharedcity": [
+        "Florida"
+      ],
+      "sharedby": [
+        "bansi@gmail.com"
+      ]
+    },
+    {
+      "firstName": "mitangi",
+      "lastName": "kapatel",
+      "username": "mitangi@gmail.com",
+      "password": "mitangi",
+      "id": 14,
+      "city": [
+        "Alaska",
+        "Utah",
+        "Arkansas"
+      ],
+      "sharedcity": [
+        "Florida"
+      ],
+      "sharedby": [
+        "mit@gmail.com"
+      ]
+    },
+    {
+      "firstName": "mitpatel23897@gmail.com",
+      "lastName": "Patel",
+      "username": "mitesfl@kms.sdf",
+      "password": "mdfs",
+      "id": 15
+    },
+    {
+      "firstName": "mitpatel23897@gmail.com",
+      "lastName": "Patel",
+      "username": "mitp@gmail.com",
+      "password": "mitttttt",
+      "id": 16
+    },
+    {
+      "firstName": "mitpatel23897@gmail.com",
+      "lastName": "Patel",
+      "username": "mit007@gmail.com",
+      "password": "mitpatel",
+      "id": 17,
+      "city": [
+        "Arkansas"
+      ]
+    }
+  ]
+}
